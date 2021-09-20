@@ -1,4 +1,24 @@
 let users = [];
+let tasks = [];
+
+const category = {
+    MARKETING: 'Marketing',
+    DESIGN: 'Design',
+    DEVELOPMENT: 'Development'
+};
+
+const urgency = {
+    HIGH: 'High',
+    MEDIUM: 'Medium',
+    LOW: 'Low'
+};
+
+const phase = {
+    TODO: 'todo',
+    INPROGRESS: 'inprogress',
+    TESTING: 'testing',
+    DONE: 'done'
+};
 
 async function init() {
     await downloadFromServer(); // for backend
@@ -10,7 +30,7 @@ async function init() {
  * smallest_backend_ever, URL-link
  * 
  */
-setURL('http://developerakademie.com/smallest_backend_ever');
+setURL('http://gruppe-100.developerakademie.com/Kanban-Gruppenarbeit/smallest_backend_ever/');
 
 /**
  * for include templates
@@ -44,6 +64,34 @@ function includeHTML() {
         }
     }
 }
+
+/**
+ * save tasks array on server
+ * @param {object} newTask 
+ */
+async function addTask(newTask) {
+    tasks = await getTasks();
+    tasks.push(newTask);
+    await backend.setItem('tasks', JSON.stringify(tasks));
+}
+
+/**
+ * get tasks array from server
+ *  
+ */
+async function getTasks() {
+    await downloadFromServer();
+    return JSON.parse(backend.getItem('tasks')) || [];
+}
+
+/**
+ * delete a task from taskes array on server
+ * @param {string} taskId
+ */
+async function deleteTask(taskId) {
+    /** TODO */
+}
+
 /**
  * save array on server
  * 
