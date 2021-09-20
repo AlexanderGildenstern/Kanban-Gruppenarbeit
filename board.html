@@ -8,9 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/board.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/mini_backend.js"></script>
+    <script src="./js/scripte.js"></script>
+    <script src="./js/task.class.js"></script>
     <script src="./js/board.js"></script>
   </head>
-  <body>
+  <body onload="loadTasks()">
     <div class="board-page">
       <div class="nav-container">
 
@@ -24,23 +27,8 @@
         </div>
         <div class="board-container-body">
           <div id="todo" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <div id="card-1" class="board-container-body__phase__card" draggable="true" ondragstart="drag(event)">
-              <div class="board-container-body__phase__card__description">
-                Create Board page
-              </div>
-              <div class="board-container-body__phase__card__footer">
-                <div class="board-container-body__phase__card__category category-marketing">
-                  <span>Marketing</span> 
-                </div>
-                <div class="board-container-body__phase__card__asingto">
-                  <div class="board-container-body__phase__card__asingto__name">Bing</div>
-                  <div class="board-container-body__phase__card__asingto__user">
-                    <img src="./img/user-2-64.png">
-                  </div>
-                </div>
-              </div>              
-            </div>
           </div>
+
           <div id="inprogress" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)">
             <div id="card-2" class="board-container-body__phase__card" draggable="true" ondragstart="drag(event)">
               <div class="board-container-body__phase__card__description">
@@ -76,7 +64,7 @@
             </div>
           </div>
           <div id="testing" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <div id="card-3" class="board-container-body__phase__card" draggable="true" ondragstart="drag(event)">
+            <div id="card-4" class="board-container-body__phase__card" draggable="true" ondragstart="drag(event)">
               <div class="board-container-body__phase__card__description">
                 Create Help page
               </div>
