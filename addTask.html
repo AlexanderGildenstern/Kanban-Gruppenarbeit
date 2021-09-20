@@ -25,17 +25,40 @@
             <div class="add-task-main bg-gray">
                 <div class="add-task-left">
                     <div class="title">TITLE</div>
-                    <div class="input-field">MANAGMENT MEETING PREPARATION</div>
+                    <input class="input-field" type="text" placeholder="MANAGMENT MEETING PREPARATION">
                     <div class="title">CATEGORY</div>
-                    <div>MANAGMENT</div>
+                    <select class="input-field-dropbox narrow">
+                        <option>Managment</option>
+                        <option>IT</option>
+                        <option>Controling</option>
+                        <option>Finance</option>
+                        <option>Web</option>
+                    </select>
+                    <div class="title">DESCRIPTION</div>
+                    <textarea class="input-field-commitment " cols="35" rows="11"
+                        placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit."></textarea>
+
                 </div>
                 <div class="add-task-right">
                     <div class="title">DUE DATE</div>
-                    <div>02/07/20</div>
+                    <input class="input-field-dropbox calendly" type="date">
                     <div class="title">URGENCY</div>
-                    <div>HIGH</div>
+                    <select class="input-field-dropbox narrow">
+                        <option>High</option>
+                        <option>Medium</option>
+                        <option>Low</option>
+                    </select>
                     <div class="title">ASSIGNED TO</div>
-                    <div></div>
+                 
+                        <div class="user-icon-container">
+                            <img class="user-icon" src="img/pic5.jpg" alt="">
+                            <img src="img/icon plus.png" alt="">
+                        </div>
+                        <div class="btn-task">
+                            <button class="btn-cancel title">CANCEL</button>
+                            <button class="btn-create">CREATE TASK</button>
+                        </div>
+                    
                 </div>
             </div>
         </div>
