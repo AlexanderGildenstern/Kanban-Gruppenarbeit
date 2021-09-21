@@ -1,5 +1,10 @@
-.color {
-    background-color: #F4F2FB;
+.backlog-main {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 150px;
+    right: 0;
+    max-width: 1500px;
 }
 
 .headline {
@@ -56,26 +61,21 @@
     text-overflow: ellipsis;
 }
 
-.backlog-priority-high {
-    border-left-style: solid;
-    border-left-color: #a10303;
-    border-left-width: 4px;
-}
-
-.backlog-priority-middel {
+.High {
     border-left-style: solid;
     border-left-color: #f11212;
     border-left-width: 4px;
 }
 
-.backlog-priority-low {
+.Middle {
     border-left-style: solid;
     border-left-color: #fcee29;
     border-left-width: 4px;
 }
 
-.backlog-priority-done {
+.Low {
     border-left-style: solid;
     border-left-color: #33af44;
     border-left-width: 4px;
 }
+
