@@ -92,11 +92,11 @@ body {
     width: 289px;
 }
 .narrow{
-    background-image: url('/img/chevron%20.png');
+    background-image: url('../img/chevron%20.png');
 }
 
 ::-webkit-calendar-picker-indicator{
-    background-image: url('/img/icons8-calendar-150.png');
+    background-image: url('../img/icons8-calendar-150.png');
     height: 32px;
     width: 32px;
 }

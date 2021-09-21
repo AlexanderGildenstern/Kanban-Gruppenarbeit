@@ -1,90 +1,101 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/board.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/mini_backend.js"></script>
-    <script src="./js/scripte.js"></script>
-    <script src="./js/task.class.js"></script>
-    <script src="./js/board.js"></script>
-  </head>
-  <body onload="loadTasks()">
-    <div class="board-page">
-      <div class="nav-container">
 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/board.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/mini_backend.js"></script>
+  <script src="./js/scripte.js"></script>
+  <script src="./js/task.class.js"></script>
+  <script src="./js/board.js"></script>
+</head>
+
+<body onload="loadTasks()">
+  <div class="board-page">
+    <div class="nav-container">
+
+    </div>
+    <div class="board-container">
+      <div class="board-container-header">
+        <div class="board-container-header__phase">
+          <h2>TO DO</h2>
+        </div>
+        <div class="board-container-header__phase">
+          <h2>IN PROGRESS</h2>
+        </div>
+        <div class="board-container-header__phase">
+          <h2>TESTING</h2>
+        </div>
+        <div class="board-container-header__phase">
+          <h2>DONE</h2>
+        </div>
       </div>
-      <div class="board-container">
-        <div class="board-container-header">
-          <div class="board-container-header__phase"><h2>TO DO</h2></div>
-          <div class="board-container-header__phase"><h2>IN PROGRESS</h2></div>
-          <div class="board-container-header__phase"><h2>TESTING</h2></div>
-          <div class="board-container-header__phase"><h2>DONE</h2></div>
+      <div class="board-container-body">
+        <div id="todo" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div>
-        <div class="board-container-body">
-          <div id="todo" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)">
-          </div>
 
-          <div id="inprogress" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <div id="card-2" class="board-container-body__phase__card" draggable="true" ondragstart="drag(event)">
-              <div class="board-container-body__phase__card__description">
-                Create Add Task page
-              </div>
-              <div class="board-container-body__phase__card__footer">
-                <div class="board-container-body__phase__card__category category-project">
-                  <span>Project</span> 
-                </div>
-                <div class="board-container-body__phase__card__asingto">
-                  <div class="board-container-body__phase__card__asingto__name">Alexander</div>
-                  <div class="board-container-body__phase__card__asingto__user">
-                    <img src="./img/user-2-64.png">
-                  </div>
-                </div>
-              </div>              
+        <div id="inprogress" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div id="card-2" class="board-container-body__phase__card" draggable="true" ondragstart="drag(event)">
+            <div class="board-container-body__phase__card__description">
+              Create Add Task page
             </div>
-            <div id="card-3" class="board-container-body__phase__card" draggable="true" ondragstart="drag(event)">
-              <div class="board-container-body__phase__card__description">
-                Create Backlog page
+            <div class="board-container-body__phase__card__footer">
+              <div class="board-container-body__phase__card__category category-project">
+                <span>Project</span>
               </div>
-              <div class="board-container-body__phase__card__footer">
-                <div class="board-container-body__phase__card__category category-development">
-                  <span>Development</span> 
+              <div class="board-container-body__phase__card__asingto">
+                <div class="board-container-body__phase__card__asingto__name">Alexander</div>
+                <div class="board-container-body__phase__card__asingto__user">
+                  <img src="./img/user-2-64.png">
                 </div>
-                <div class="board-container-body__phase__card__asingto">
-                  <div class="board-container-body__phase__card__asingto__name">Niklas</div>
-                  <div class="board-container-body__phase__card__asingto__user">
-                    <img src="./img/user-2-64.png">
-                  </div>
-                </div>
-              </div>              
+              </div>
             </div>
           </div>
-          <div id="testing" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <div id="card-4" class="board-container-body__phase__card" draggable="true" ondragstart="drag(event)">
-              <div class="board-container-body__phase__card__description">
-                Create Help page
+          <div id="card-3" class="board-container-body__phase__card" draggable="true" ondragstart="drag(event)">
+            <div class="board-container-body__phase__card__description">
+              Create Backlog page
+            </div>
+            <div class="board-container-body__phase__card__footer">
+              <div class="board-container-body__phase__card__category category-development">
+                <span>Development</span>
               </div>
-              <div class="board-container-body__phase__card__footer">
-                <div class="board-container-body__phase__card__category category-design">
-                  <span>Design</span> 
+              <div class="board-container-body__phase__card__asingto">
+                <div class="board-container-body__phase__card__asingto__name">Niklas</div>
+                <div class="board-container-body__phase__card__asingto__user">
+                  <img src="./img/user-2-64.png">
                 </div>
-                <div class="board-container-body__phase__card__asingto">
-                  <div class="board-container-body__phase__card__asingto__name">Hans</div>
-                  <div class="board-container-body__phase__card__asingto__user">
-                    <img src="./img/user-2-64.png">
-                  </div>
-                </div>
-              </div>              
+              </div>
             </div>
           </div>
-          <div id="done" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         </div>
+        <div id="testing" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div id="card-4" class="board-container-body__phase__card" draggable="true" ondragstart="drag(event)">
+            <div class="board-container-body__phase__card__description">
+              Create Help page
+            </div>
+            <div class="board-container-body__phase__card__footer">
+              <div class="board-container-body__phase__card__category category-design">
+                <span>Design</span>
+              </div>
+              <div class="board-container-body__phase__card__asingto">
+                <div class="board-container-body__phase__card__asingto__name">Hans</div>
+                <div class="board-container-body__phase__card__asingto__user">
+                  <img src="./img/user-2-64.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="done" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
       </div>
     </div>
+  </div>
 
-  </body>
+</body>
+
 </html>
