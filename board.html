@@ -12,11 +12,14 @@
     <script src="./js/scripte.js"></script>
     <script src="./js/task.class.js"></script>
     <script src="./js/board.js"></script>
+    <script src="./js/nav.js"></script>
   </head>
-  <body onload="loadTasks()">
+  <body onload="activateOption('board'); loadTasks()">
     <div class="board-page">
-      <div class="nav-container">
-
+      <div class="nav-container" navbar="./templates/nav.html">
+        <script>
+          includeHTML();
+        </script>
       </div>
       <div class="board-container">
         <div class="board-container-header">
