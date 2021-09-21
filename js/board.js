@@ -2,7 +2,7 @@
 
 function initBoard() {
   let task1 = new Task(
-    "7",
+    "1",
     "Title",
     category.DESIGN,
     "Description",
