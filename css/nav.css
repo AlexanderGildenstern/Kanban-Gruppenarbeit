@@ -51,13 +51,13 @@
   cursor: pointer;
 }
 
-.option-avtive {
+.option-active {
   border-left-style:solid;
   border-left-width: 5px;
   border-left-color: #fff;
 }
 
-.option-avtive a {
+.option-active a {
   color: #fff;
 }
 

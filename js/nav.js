@@ -15,28 +15,28 @@ function activateOption(option) {
 
   switch(option) {
     case "board":
-      document.getElementById("opt-board").classList.add("option-avtive");
-      document.getElementById("opt-backlog").classList.remove("option-avtive");
-      document.getElementById("opt-addtask").classList.remove("option-avtive");
-      document.getElementById("opt-help").classList.remove("option-avtive");
+      document.getElementById("opt-board").classList.add("option-active");
+      document.getElementById("opt-backlog").classList.remove("option-active");
+      document.getElementById("opt-addtask").classList.remove("option-active");
+      document.getElementById("opt-help").classList.remove("option-active");
       break;
     case "backlog":
-      document.getElementById("opt-board").classList.remove("option-avtive");
-      document.getElementById("opt-backlog").classList.add("option-avtive");
-      document.getElementById("opt-addtask").classList.remove("option-avtive");
-      document.getElementById("opt-help").classList.remove("option-avtive");
+      document.getElementById("opt-board").classList.remove("option-active");
+      document.getElementById("opt-backlog").classList.add("option-active");
+      document.getElementById("opt-addtask").classList.remove("option-active");
+      document.getElementById("opt-help").classList.remove("option-active");
       break;
     case "addtask":
-      document.getElementById("opt-board").classList.remove("option-avtive");
-      document.getElementById("opt-backlog").classList.remove("option-avtive");
-      document.getElementById("opt-addtask").classList.add("option-avtive");
-      document.getElementById("opt-help").classList.remove("option-avtive");
+      document.getElementById("opt-board").classList.remove("option-active");
+      document.getElementById("opt-backlog").classList.remove("option-active");
+      document.getElementById("opt-addtask").classList.add("option-active");
+      document.getElementById("opt-help").classList.remove("option-active");
       break;
     case "help":
-      document.getElementById("opt-board").classList.add("option-avtive");
-      document.getElementById("opt-backlog").classList.remove("option-avtive");
-      document.getElementById("opt-addtask").classList.remove("option-avtive");
-      document.getElementById("opt-help").classList.add("option-avtive");
+      document.getElementById("opt-board").classList.remove("option-active");
+      document.getElementById("opt-backlog").classList.remove("option-active");
+      document.getElementById("opt-addtask").classList.remove("option-active");
+      document.getElementById("opt-help").classList.add("option-active");
       break;
     }
 }
