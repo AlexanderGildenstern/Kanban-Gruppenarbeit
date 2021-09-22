@@ -7,14 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/mini_backend.js"></script>
     <script src="js/scripte.js"></script>
+    <script src="js/addTask.js"></script>
     <script src="js/nav.js"></script>
+    <script src="js/backlog.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/backlog.css">
     <link rel="stylesheet" href="css/nav.css">
     <title>Backlog</title>
 </head>
 
-<body onload="init()">
+<body onload="loadNavbarStyle('backlog'); init()">
     <div class="navbar">
         <div w3-include-html="./templates/nav.html"></div>
     </div>
@@ -35,7 +37,7 @@
                     <span class="backlogusername">
                         Bing Xia
                     </span>
-                    <a class="email" href="mailto:user email">...@....de</a>
+                    <a class="email" href="mailto:user email">xia.bing@live.com</a>
                 </div>
             </div>
             <span class="backlogcategory">Marketing</span>
