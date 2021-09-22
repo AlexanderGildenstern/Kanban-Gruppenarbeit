@@ -1,5 +1,13 @@
 allTasks = [];
 
+async function init(){
+    await downloadFromServer(); // for backend
+    allTasks = JSON.parse(backend.getItem('allTasks')) || []; // for backend
+
+    loadAllTasksFromServer();
+    includeHTML();
+}
+
 function fetchTask() {
     let title = document.getElementById('title');
     let category = document.getElementById('category');
@@ -17,12 +25,21 @@ function fetchTask() {
         'urgency': urgency.value,
         //    'assignedTo': assignedTo.value,
     }
-    allTasks.push(task);
-    let allTasksAsString = JSON.stringify(allTasks);
-    localStorage.setItem('allTasks', allTasksAsString);
-
+    saveOnServer(task);
     clearFields(title, category, description, date, urgency);
 }
+
+async function saveOnServer(task){
+    allTasks = await getAllTasks();
+    allTasks.push(task);
+    await backend.setItem('allTasks', JSON.stringify(allTasks));
+}
+
+async function getAllTasks() {
+    await downloadFromServer();
+    return JSON.parse(backend.getItem('allTasks')) || [];
+}
+
 /**
  * Reset all fields in addTask
  * 
@@ -39,12 +56,9 @@ function clearFields(title, category, description, date, urgency) {
     date.value = '';
     urgency.selectedIndex = 0;
 }
-/**
- * 
- * 
- */
-function loadAllTasks() {
-    let allTasksAsString = localStorage.getItem('allTasks');
-    allTasks = JSON.parse(allTasksAsString);
-    console.log(allTasks);
+
+function loadAllTasksFromServer() {
+    let allTasksAsString = backend.getItem('allTasks');
+    allTasks = JSON.parse(allTasksAsString) || [];
+    console.log(allTasksAsString);
 }
