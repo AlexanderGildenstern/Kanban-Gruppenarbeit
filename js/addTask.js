@@ -1,7 +1,7 @@
 allTasks = [];
 currentUser = [];
 
-async function init() {
+async function initAddTask() {
     await downloadFromServer(); // for backend
     allTasks = JSON.parse(backend.getItem('allTasks')) || []; // for backend
 
@@ -61,7 +61,7 @@ function clearFields(title, category, description, date, urgency) {
 function loadAllTasksFromServer() {
     let allTasksAsString = backend.getItem('allTasks');
     allTasks = JSON.parse(allTasksAsString) || [];
-    console.log(allTasksAsString);
+    //console.log(allTasksAsString);
 }
 
 function activeBorder(user) {
