@@ -15,7 +15,7 @@ function fetchTask() {
     let description = document.getElementById('description');
     let date = document.getElementById('date');
     let urgency = document.getElementById('urgency');
-    //let assignedTo = this.currentUser;
+    let assignedTo = this.currentUser;
 
     let task = {
         'title': title.value,
@@ -24,7 +24,7 @@ function fetchTask() {
         'date': date.value,
         'createAt': new Date().getTime(),
         'urgency': urgency.value,
-        //'assignedTo': assignedTo.value,
+        'assignedTo': assignedTo,
     }
     saveOnServer(task);
     clearFields(title, category, description, date, urgency);
@@ -61,7 +61,7 @@ function clearFields(title, category, description, date, urgency) {
 function loadAllTasksFromServer() {
     let allTasksAsString = backend.getItem('allTasks');
     allTasks = JSON.parse(allTasksAsString) || [];
-    //console.log(allTasksAsString);
+    console.log(allTasksAsString);
 }
 
 function activeBorder(user) {
