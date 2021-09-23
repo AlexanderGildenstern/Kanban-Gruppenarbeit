@@ -1,6 +1,7 @@
 allTasks = [];
+currentUser = [];
 
-async function init(){
+async function init() {
     await downloadFromServer(); // for backend
     allTasks = JSON.parse(backend.getItem('allTasks')) || []; // for backend
 
@@ -14,7 +15,7 @@ function fetchTask() {
     let description = document.getElementById('description');
     let date = document.getElementById('date');
     let urgency = document.getElementById('urgency');
-    //let assignedTo = document.getElementById('assignedTo');
+    //let assignedTo = this.currentUser;
 
     let task = {
         'title': title.value,
@@ -23,13 +24,13 @@ function fetchTask() {
         'date': date.value,
         'createAt': new Date().getTime(),
         'urgency': urgency.value,
-        //    'assignedTo': assignedTo.value,
+        //'assignedTo': assignedTo.value,
     }
     saveOnServer(task);
     clearFields(title, category, description, date, urgency);
 }
 
-async function saveOnServer(task){
+async function saveOnServer(task) {
     allTasks = await getAllTasks();
     allTasks.push(task);
     await backend.setItem('allTasks', JSON.stringify(allTasks));
@@ -61,4 +62,17 @@ function loadAllTasksFromServer() {
     let allTasksAsString = backend.getItem('allTasks');
     allTasks = JSON.parse(allTasksAsString) || [];
     console.log(allTasksAsString);
+}
+
+function activeBorder(user) {
+    let currentUser = document.getElementById(user);
+
+    if (currentUser.className.indexOf('user-active') === -1) {
+        currentUser.classList.add('user-active');
+        this.currentUser.push(user);
+    }
+    else {
+        currentUser.classList.remove('user-active');
+        this.currentUser.splice(user,1);
+    }
 }

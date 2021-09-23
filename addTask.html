@@ -18,10 +18,7 @@
 <body onload="loadNavbarStyle('addtask'); init()">
 
     <div class="main-container">
-
         <div class="nav-container" w3-include-html="templates/nav.html"></div>
-        
-
         <div class="add-task-container">
             <div class="headline">
                 <h1 class="h1">Add Task</h1>
@@ -59,14 +56,16 @@
                         <div id="assingnedTo" class="title">ASSIGNED TO</div>
 
                         <div class="user-icon-container">
-                            <img class="user-icon" src="img/pic5.jpg" alt="">
-                            <img src="img/icon plus.png" alt="">
+                            <img class="user-icon" id="user1" src="img/pic5.jpg" onclick="activeBorder('user1')">
+                            <img class="user-icon" id="user2" src="img/pic2.jpg" onclick="activeBorder('user2')">
+                            <img class="user-icon" id="user3" src="img/pic6.jpg" onclick="activeBorder('user3')">
+                            
                         </div>
                         <div class="btn-task">
                             <div onclick="location.href='addTask.html'" class="btn-cancel title">CANCEL</div>
                             <button class="btn-create">CREATE TASK</button>
                         </div>
-
+                        
                     </div>
                 </div>
             </form>

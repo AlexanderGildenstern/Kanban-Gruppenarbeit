@@ -6,14 +6,12 @@ body {
     display: flex;
 }
 
-/* .nav-bar {
-    width: 150px;
-    height: 500px;
-    background-color: #1717ce;
-} */
+.nav-container {
+    z-index: 1;
+}
 
 .add-task-container {
-    z-index: -1;
+    z-index: 0;
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -62,79 +60,96 @@ body {
     width: 300px;
     height: 15px;
 }
-.input-field-commitment{
+
+.input-field-commitment {
     background: white;
     border: solid 2px rgb(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 10px;
-   resize: none;
-   width: 289px;
+    resize: none;
+    width: 289px;
 }
-.input-field-dropbox{
+
+.input-field-dropbox {
     display: block;
     font-size: 16px;
     padding: 20px 10px;
     width: 313px;
     border: solid 2px rgb(0, 0, 0, 0.2);
-    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
     border-radius: 5px;
     appearance: none;
-    
     background-repeat: no-repeat, repeat;
     /* arrow icon position (16px from the right, 50% vertical) , then gradient position*/
     background-position: right 16px top 50%, 0 0;
     /* icon size, then gradient */
     background-size: 16px auto, 100%;
-    
 }
-.calendly{
+
+.calendly {
     height: 15px;
     width: 289px;
 }
-.narrow{
+
+.narrow {
     background-image: url('../img/chevron%20.png');
 }
 
-::-webkit-calendar-picker-indicator{
+::-webkit-calendar-picker-indicator {
     background-image: url('../img/icons8-calendar-150.png');
     height: 32px;
     width: 32px;
 }
+
 ::placeholder {
     color: black;
-    opacity: 1; /* Firefox */
-  }
-.user-icon-container{
+    opacity: 1;
+    /* Firefox */
+}
+
+.user-icon-container {
     margin-top: 22px;
     display: flex;
     align-items: center;
 }
-.user-icon{
+
+.user-icon {
     border-radius: 100%;
-    padding: 20px;
+    margin: 20px;
     height: 80px;
     width: 80px;
     object-fit: cover;
+    border: 2px solid transparent;
 }
-.btn-task{
+.user-icon:hover{
+    cursor: pointer;
+    margin: 20px;
+    border: 2px solid #1717ce;
+}
+.user-active{
+    border: 2px solid #1717ce;
+}
+.btn-task {
     display: flex;
     justify-content: flex-end;
+}
 
+.btn-cancel {
+    background-color: transparent;
+    transition: all 125ms;
+    border: none;
+    padding: 15px 20px;
+    margin-right: 20px;
 }
-.btn-cancel{
-background-color: transparent;
-transition: all 125ms;
-border: none;
-padding: 15px 20px;
-margin-right: 20px;
-}
-.btn-cancel:hover{
+
+.btn-cancel:hover {
     background-color: #1717ce12;
     transition: all 125ms;
     border-radius: 10px;
     padding: 15px 20px;
 }
-.btn-create{
+
+.btn-create {
     background-color: #1717ce;
     transition: all 125ms;
     border: none;
@@ -143,7 +158,8 @@ margin-right: 20px;
     color: white;
     font-weight: 700;
 }
-.btn-create:hover{
+
+.btn-create:hover {
     transition: all 125ms;
     background-color: #1414dde0;
 }
