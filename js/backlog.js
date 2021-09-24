@@ -1,11 +1,11 @@
 function updateBacklog() {
-    for (let i = 0; i < allTasks.length; i++) {
+    for (let i = 0; i < tasks.length; i++) {
         document.getElementById('generatedBacklog').innerHTML += generateBacklog(i);
 
-        document.getElementById(`backlogUser${i}`).innerHTML = allTasks[i]
-        document.getElementById(`backlogMail${i}`).innerHTML = allTasks[i]
-        document.getElementById(`backlogCategory${i}`).innerHTML = allTasks[i]['category']
-        document.getElementById(`backlogDescription${i}`).innerHTML = allTasks[i]['description']
+        document.getElementById(`backlogUser${i}`).innerHTML = tasks[i]
+        document.getElementById(`backlogMail${i}`).innerHTML = tasks[i]
+        document.getElementById(`backlogCategory${i}`).innerHTML = tasks[i]['category']
+        document.getElementById(`backlogDescription${i}`).innerHTML = tasks[i]['description']
         
     }
 }
@@ -39,11 +39,11 @@ function generateBacklog(i) {
  * @returns the color which is give to the urgency 
  */
 function chooseColor(i) {
-    if (allTasks[i]['urgency'] == 'LOW') {
+    if (tasks[i]['urgency'] == 'LOW') {
         color = 'green';
-    } else if (allTasks[i]['urgency'] == 'MIDDLE') {
+    } else if (tasks[i]['urgency'] == 'MIDDLE') {
         color = 'yellow';
-    } else if (allTasks[i]['urgency'] == 'HIGH') {
+    } else if (tasks[i]['urgency'] == 'HIGH') {
         color = 'red';
     }
     return color;

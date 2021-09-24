@@ -30,16 +30,16 @@ function collectTask() {
     clearFields(title, category, description, date, urgency);
 }
 
-async function saveOnServer(task) {
-    tasks = await getTasks();
-    tasks.push(task);
-    await backend.setItem('tasks', JSON.stringify(tasks));
-}
+// async function saveOnServer(task) {
+//     tasks = await getTasks();
+//     tasks.push(task);
+//     await backend.setItem('tasks', JSON.stringify(tasks));
+// }
 
-async function getTasks() {
-    await downloadFromServer();
-    return JSON.parse(backend.getItem('tasks')) || [];
-}
+// async function getTasks() {
+//     await downloadFromServer();
+//     return JSON.parse(backend.getItem('tasks')) || [];
+// }
 
 /**
  * Reset all fields in addTask
@@ -58,11 +58,11 @@ function clearFields(title, category, description, date, urgency) {
     urgency.selectedIndex = 0;
 }
 
-// function loadTasksFromServer() {
-//     let tasksAsString = backend.getItem('tasks');
-//     tasks = JSON.parse(tasksAsString) || [];
-//     console.log(tasksAsString);
-// }
+function loadTasksFromServer() {
+    let tasksAsString = backend.getItem('tasks');
+    tasks = JSON.parse(tasksAsString) || [];
+    console.log(tasksAsString);
+}
 
 function activeBorder(user) {
     let currentUser = document.getElementById(user);
