@@ -2,9 +2,11 @@
 let tasks = [];
 
 const category = {
-    MARKETING: 'Marketing',
-    DESIGN: 'Design',
-    DEVELOPMENT: 'Development'
+    MANAGEMENT: 'Management',
+    IT: 'IT',
+    CONTROLING: 'Controling',
+    FINANCE: 'Finance',
+    WEB: 'Web'
 };
 
 const urgency = {
@@ -69,28 +71,58 @@ function includeHTML() {
  * save tasks array on server
  * @param {object} newTask 
  */
-async function addTask(newTask) {
-    tasks = await getTasks();
-    tasks.push(newTask);
-    await backend.setItem('tasks', JSON.stringify(tasks));
+ async function addTask(newTask) {
+  tasks = await getTasks();
+  tasks.push(newTask);
+  await backend.setItem('tasks', JSON.stringify(tasks));
 }
 
 /**
- * get tasks array from server
- *  
- */
+* get tasks array from server
+*  
+*/
 async function getTasks() {
-    await downloadFromServer();
-    return JSON.parse(backend.getItem('tasks')) || [];
+  await downloadFromServer();
+  return JSON.parse(backend.getItem('tasks')) || [];
 }
 
 /**
- * delete a task from taskes array on server
- * @param {string} taskId
- */
-async function deleteTask(taskId) {
-    /** TODO */
+* update a task from taskes array on server
+* @param {string} taskId
+*/
+async function updateTask(updatedTask) {
+  let newTasks = [];
+  if(tasks == '') {
+    tasks = await getTasks();
+  }
+  clearTasks();
+  newTasks = tasks.filter( item => item.id !== updatedTask.id);
+  newTasks.push(updatedTask);
+  await backend.setItem('tasks', JSON.stringify(newTasks));
 }
+
+/**
+* delete a specific task according to taskId
+* @param {string} taskId
+*/
+async function deleteTask(taskId) {
+  let newTasks = [];
+  if(tasks == '') {
+    tasks = await getTasks();
+  }
+  clearTasks();
+  newTasks = tasks.filter( item => item.id !== taskId);
+  await backend.setItem('tasks', JSON.stringify(newTasks));
+}
+
+/**
+* clear all tasks from taskes array on server
+* 
+*/
+function clearTasks() {
+  backend.deleteItem('tasks');
+}
+
 
 // /**
 //  * save array on server
