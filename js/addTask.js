@@ -1,15 +1,15 @@
-allTasks = [];
+//tasks = [];
 currentUser = [];
 
-async function initAddTask() {
-    await downloadFromServer(); // for backend
-    allTasks = JSON.parse(backend.getItem('allTasks')) || []; // for backend
+// async function initAddTask() {
+//     await downloadFromServer(); // for backend
+//     tasks = JSON.parse(backend.getItem('tasks')) || []; // for backend
 
-    loadAllTasksFromServer();
-    includeHTML();
-}
+//     loadTasksFromServer();
+//     includeHTML();
+// }
 
-function fetchTask() {
+function collectTask() {
     let title = document.getElementById('title');
     let category = document.getElementById('category');
     let description = document.getElementById('description');
@@ -26,19 +26,19 @@ function fetchTask() {
         'urgency': urgency.value,
         'assignedTo': assignedTo,
     }
-    saveOnServer(task);
+    addTask(task);
     clearFields(title, category, description, date, urgency);
 }
 
 async function saveOnServer(task) {
-    allTasks = await getAllTasks();
-    allTasks.push(task);
-    await backend.setItem('allTasks', JSON.stringify(allTasks));
+    tasks = await getTasks();
+    tasks.push(task);
+    await backend.setItem('tasks', JSON.stringify(tasks));
 }
 
-async function getAllTasks() {
+async function getTasks() {
     await downloadFromServer();
-    return JSON.parse(backend.getItem('allTasks')) || [];
+    return JSON.parse(backend.getItem('tasks')) || [];
 }
 
 /**
@@ -58,11 +58,11 @@ function clearFields(title, category, description, date, urgency) {
     urgency.selectedIndex = 0;
 }
 
-function loadAllTasksFromServer() {
-    let allTasksAsString = backend.getItem('allTasks');
-    allTasks = JSON.parse(allTasksAsString) || [];
-    console.log(allTasksAsString);
-}
+// function loadTasksFromServer() {
+//     let tasksAsString = backend.getItem('tasks');
+//     tasks = JSON.parse(tasksAsString) || [];
+//     console.log(tasksAsString);
+// }
 
 function activeBorder(user) {
     let currentUser = document.getElementById(user);

@@ -1,4 +1,4 @@
-let users = [];
+//let users = [];
 let tasks = [];
 
 const category = {
@@ -22,7 +22,7 @@ const phase = {
 
 async function init() {
     await downloadFromServer(); // for backend
-    users = JSON.parse(backend.getItem('users')) || []; // for backend
+    tasks = JSON.parse(backend.getItem('tasks')) || []; // for backend
 
     includeHTML();
 }
@@ -92,19 +92,19 @@ async function deleteTask(taskId) {
     /** TODO */
 }
 
-/**
- * save array on server
- * 
- */
-async function addUser() {
-    users.push('John');
-    await backend.setItem('users', JSON.stringify(users));
-}
-/**
- * delete array on server
- * 
- * @param {array} name 
- */
-function deleteUser(name) {
-    backend.deleteItem('users');
-  }
+// /**
+//  * save array on server
+//  * 
+//  */
+// async function addUser() {
+//     users.push('John');
+//     await backend.setItem('users', JSON.stringify(users));
+// }
+// /**
+//  * delete array on server
+//  * 
+//  * @param {array} name 
+//  */
+// function deleteUser(name) {
+//     backend.deleteItem('users');
+//   }

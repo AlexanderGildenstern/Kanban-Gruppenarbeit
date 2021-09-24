@@ -15,7 +15,7 @@
     <script src="js/nav.js"></script>
 </head>
 
-<body onload="loadNavbarStyle('addtask'); initAddTask()">
+<body onload="loadNavbarStyle('addtask'); init()">
 
     <div class="main-container">
         <div class="nav-container" w3-include-html="templates/nav.html"></div>
@@ -24,7 +24,7 @@
                 <h1 class="h1">Add Task</h1>
                 <h2 class="h2">Learning Managment System Project</h2>
             </div>
-            <form onsubmit="fetchTask()">
+            <form onsubmit="collectTask()">
                 <div class="add-task-main bg-gray">
                     <div class="add-task-left">
                         <div class="title">TITLE</div>
