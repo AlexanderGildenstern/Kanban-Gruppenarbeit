@@ -41,11 +41,12 @@
 .backlogprofil {
     display: flex;
     align-items: center;
-    width: 7%;
+    width: 10%;
 }
 
 .backlogprofil img {
-    width: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50px;
 }
 
@@ -67,7 +68,7 @@
     border-left-width: 4px;
 }
 
-.Middle {
+.Medium {
     border-left-style: solid;
     border-left-color: #fcee29;
     border-left-width: 4px;
