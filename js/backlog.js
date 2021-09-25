@@ -1,11 +1,19 @@
+
+
+/**
+ * This function update the backlog
+ */
 function updateBacklog() {
+    // document.getElementById('generatedBacklog').innerHTML = ' ';
     for (let i = 0; i < tasks.length; i++) {
         document.getElementById('generatedBacklog').innerHTML += generateBacklog(i);
 
-        document.getElementById(`backlogUser${i}`).innerHTML = tasks[i]
-        document.getElementById(`backlogMail${i}`).innerHTML = tasks[i]
-        document.getElementById(`backlogCategory${i}`).innerHTML = tasks[i]['category']
-        document.getElementById(`backlogDescription${i}`).innerHTML = tasks[i]['description']
+        document.getElementById(`userImage${i}`).src = users[i]['profil_image'];
+        document.getElementById(`backlogUser${i}`).innerHTML = users[i]['first_name'] + ' ' + users[i]['last_name'];
+        document.getElementById(`backlogMail${i}`).innerHTML = users[i]['email'];
+        document.getElementById(`backlogCategory${i}`).innerHTML = tasks[i]['category'];
+        document.getElementById(`backlogDate${i}`).innerHTML = tasks[i]['date'];
+        document.getElementById(`backlogTitle${i}`).innerHTML = tasks[i]['title'];
         
     }
 }
@@ -17,9 +25,9 @@ function updateBacklog() {
  */
 function generateBacklog(i) {
     return `
-        <div class="backlog" id="urgencyColor${i}">
+        <div class="backlog ${tasks[i]['urgency']}">
             <div class="backlogprofil">
-                <img src="img/user-2-64.png" alt="Profilbild">
+                <img id="userImage${i}" src="img/user-2-64.png" alt="Profilbild">
                 <div class="backloguser">
                     <span class="backlogusername" id="backlogUser${i}">
                         Hans Peters
@@ -28,23 +36,8 @@ function generateBacklog(i) {
                 </div>
             </div>
             <span class="backlogcategory" id="backlogCategory${i}">Design</span>
-            <span class="backlogdetails" id="backlogDescription${i}">asdas</span>
+            <span class="backlogCreateAt" id="backlogDate${i}">21.09.2021</span>
+            <span class="backlogdetails" id="backlogTitle${i}">asdas</span>
         </div>
     `;
-}
-
-/**
- * This function choose the color for the backlog
- * @param {number} i - This is the number of the taskt
- * @returns the color which is give to the urgency 
- */
-function chooseColor(i) {
-    if (tasks[i]['urgency'] == 'LOW') {
-        color = 'green';
-    } else if (tasks[i]['urgency'] == 'MIDDLE') {
-        color = 'yellow';
-    } else if (tasks[i]['urgency'] == 'HIGH') {
-        color = 'red';
-    }
-    return color;
 }
