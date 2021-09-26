@@ -24,7 +24,7 @@
                 <h1 class="h1">Add Task</h1>
                 <h2 class="h2">Learning Managment System Project</h2>
             </div>
-            <form onsubmit="collectTask()">
+            <form onsubmit="collectTask(); return false" >
                 <div class="add-task-main bg-gray">
                     <div class="add-task-left">
                         <div class="title">TITLE</div>
@@ -71,6 +71,7 @@
             </form>
         </div>
     </div>
+    
 </body>
 
 </html>

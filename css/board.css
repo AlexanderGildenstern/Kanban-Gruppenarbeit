@@ -50,7 +50,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 60px;
+  height: 100px;
+  width: 180px;
   background: #FFF;
   color: gray;
   box-shadow: 0 1px 0 rgba(9,30,66,.25);
@@ -59,19 +60,46 @@
   font-size: 14px;
 }
 
-.board-container-body__phase__card__footer {
+.board-container-body__phase__card__top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+}
+
+.board-container-body__phase__card__title {
+  color: #000;
+  font-weight: 600;
+}
+
+.board-container-body__phase__card-delete:hover {
+  cursor: pointer;
+}
+
+.board-container-body__phase__card__description {
+  padding-top: 8px;
+  padding-bottom: 4px;
+  height: 36px;
+}
+.board-container-body__phase__card__footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .board-container-body__phase__card__category {
+  width: fit-content;
   padding-right: 12px;
   padding-left: 12px;
   padding-top: 2px;
   padding-bottom: 2px;
   border-radius: 3px;
+}
+
+.board-container-body__phase__card__footer__bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .board-container-body__phase__card__asingto {
@@ -86,22 +114,39 @@
   border-radius: 50%;
 }
 
-.category-marketing {
+.urgency-high {
+  background-color: #FFF2F2;
+}
+
+.urgency-medium {
+  background-color: #ffffee;
+}
+
+.urgency-low {
+  background-color: #d2f8d2;
+}
+
+.category-management {
   background-color: #a10303;
   color: #FFF;
 }
 
-.category-development {
+.category-it {
   background-color: #fcee29;
   color: #000;
 }
 
-.category-design {
+.category-controling {
   background-color: #33af44;
   color: #FFF;
 }
 
-.category-project {
+.category-finance {
+  background-color: #f11212;
+  color: #FFF;
+}
+
+.category-web {
   background-color: #f11212;
   color: #FFF;
 }
