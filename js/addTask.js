@@ -58,11 +58,11 @@ function clearFields(title, category, description, date, urgency) {
     urgency.selectedIndex = 0;
 }
 
-function loadTasksFromServer() {
-    let tasksAsString = backend.getItem('tasks');
-    tasks = JSON.parse(tasksAsString) || [];
-    console.log(tasksAsString);
-}
+// function loadTasksFromServer() {
+//     let tasksAsString = backend.getItem('tasks');
+//     tasks = JSON.parse(tasksAsString) || [];
+//     console.log(tasksAsString);
+// }
 
 function activeBorder(user) {
     let currentUser = document.getElementById(user);

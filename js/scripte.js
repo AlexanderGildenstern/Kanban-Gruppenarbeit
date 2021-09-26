@@ -23,7 +23,7 @@ const phase = {
 async function init() {
     await downloadFromServer(); // for backend
     tasks = JSON.parse(backend.getItem('tasks')) || []; // for backend
-    loadTasksFromServer();
+
     includeHTML();
 }
 /**
