@@ -1,13 +1,5 @@
-//tasks = [];
 currentUser = [];
-
-// async function initAddTask() {
-//     await downloadFromServer(); // for backend
-//     tasks = JSON.parse(backend.getItem('tasks')) || []; // for backend
-
-//     loadTasksFromServer();
-//     includeHTML();
-// }
+id;
 
 function collectTask() {
     let title = document.getElementById('title');
@@ -16,6 +8,7 @@ function collectTask() {
     let date = document.getElementById('date');
     let urgency = document.getElementById('urgency');
     let assignedTo = this.currentUser;
+    this.id = Date.now().toString(36) + Math.random().toString(36).substring(2);
 
     let task = {
         'title': title.value,
@@ -25,21 +18,12 @@ function collectTask() {
         'createAt': new Date().getTime(),
         'urgency': urgency.value,
         'assignedTo': assignedTo,
+        'id': this.id,
+        'phase': 'todo',
     }
     addTask(task);
     clearFields(title, category, description, date, urgency);
 }
-
-// async function saveOnServer(task) {
-//     tasks = await getTasks();
-//     tasks.push(task);
-//     await backend.setItem('tasks', JSON.stringify(tasks));
-// }
-
-// async function getTasks() {
-//     await downloadFromServer();
-//     return JSON.parse(backend.getItem('tasks')) || [];
-// }
 
 /**
  * Reset all fields in addTask
@@ -58,12 +42,6 @@ function clearFields(title, category, description, date, urgency) {
     urgency.selectedIndex = 0;
 }
 
-// function loadTasksFromServer() {
-//     let tasksAsString = backend.getItem('tasks');
-//     tasks = JSON.parse(tasksAsString) || [];
-//     console.log(tasksAsString);
-// }
-
 function activeBorder(user) {
     let currentUser = document.getElementById(user);
 
@@ -73,6 +51,6 @@ function activeBorder(user) {
     }
     else {
         currentUser.classList.remove('user-active');
-        this.currentUser.splice(user,1);
+        this.currentUser.splice(user, 1);
     }
 }

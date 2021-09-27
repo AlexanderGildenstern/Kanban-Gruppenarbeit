@@ -44,7 +44,7 @@ const phase = {
 async function init() {
   await downloadFromServer(); // for backend
   tasks = JSON.parse(backend.getItem('tasks')) || []; // for backend
-  loadTasksFromServer();
+  
   includeHTML();
   updateBacklog();
 }
@@ -142,21 +142,3 @@ async function deleteTask(taskId) {
 function clearTasks() {
   backend.deleteItem('tasks');
 }
-
-
-// /**
-//  * save array on server
-//  *
-//  */
-// async function addUser() {
-//     users.push('John');
-//     await backend.setItem('users', JSON.stringify(users));
-// }
-// /**
-//  * delete array on server
-//  *
-//  * @param {array} name
-//  */
-// function deleteUser(name) {
-//     backend.deleteItem('users');
-//   }
