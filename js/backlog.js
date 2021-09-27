@@ -4,7 +4,7 @@
  * This function update the backlog
  */
 function updateBacklog() {
-    // document.getElementById('generatedBacklog').innerHTML = ' ';
+     // document.getElementById('generatedBacklog').innerHTML = ' ';
     for (let i = 0; i < tasks.length; i++) {
         document.getElementById('generatedBacklog').innerHTML += generateBacklog(i);
 

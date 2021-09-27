@@ -1,6 +1,9 @@
 currentUser = [];
-id;
-
+let id;
+/**
+ * 
+ * 
+ */
 function collectTask() {
     let title = document.getElementById('title');
     let category = document.getElementById('category');
@@ -8,7 +11,7 @@ function collectTask() {
     let date = document.getElementById('date');
     let urgency = document.getElementById('urgency');
     let assignedTo = this.currentUser;
-    this.id = Date.now().toString(36) + Math.random().toString(36).substring(2);
+    id = Date.now().toString(36) + Math.random().toString(36).substring(2);
 
     let task = {
         'title': title.value,
@@ -18,7 +21,7 @@ function collectTask() {
         'createAt': new Date().getTime(),
         'urgency': urgency.value,
         'assignedTo': assignedTo,
-        'id': this.id,
+        'id': id,
         'phase': 'todo',
     }
     addTask(task);
@@ -28,11 +31,11 @@ function collectTask() {
 /**
  * Reset all fields in addTask
  * 
- * @param {text} title 
- * @param {text} category 
- * @param {text} description 
+ * @param {string} title 
+ * @param {string} category 
+ * @param {string} description 
  * @param {number} date 
- * @param {text} urgency 
+ * @param {string} urgency 
  */
 function clearFields(title, category, description, date, urgency) {
     title.value = '';
