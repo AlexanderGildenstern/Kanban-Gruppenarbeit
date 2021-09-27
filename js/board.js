@@ -45,7 +45,7 @@ function addToBoard(phase, task) {
             ${task.date}
           </div>
           <div class="board-container-body__phase__card__asingto">
-            <div class="board-container-body__phase__card__asingto__name">${task.assignTo}</div>
+            <div class="board-container-body__phase__card__asingto__name">${task.assignedTo}</div>
             <div class="board-container-body__phase__card__asingto__user">
               <img src="./img/user-2-64.png">
             </div>
