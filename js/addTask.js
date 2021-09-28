@@ -4,7 +4,8 @@ let id;
  * fetch value of fields
  * 
  */
-function collectTask() {
+function collectTask(event) {
+    event.preventDefault();
     let title = document.getElementById('title');
     let category = document.getElementById('category');
     let description = document.getElementById('description');
