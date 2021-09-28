@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+}
+main{
+    text-align: center;
+}
+.login-container{
+    background-color: rgba(0, 0, 100, 0.1);
+    border-radius: 10px;
+    margin: 40px;
+    padding: 40px;
+}
+.login-main{
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.login-text{
+    margin: 10px;
+}
+.btn-container{
+    padding: 10px;
+}
+.btn-container button{
+    padding: 10px 20px;
+    margin: 20px;
+}

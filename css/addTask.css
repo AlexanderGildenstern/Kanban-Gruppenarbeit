@@ -162,4 +162,5 @@ body {
 .btn-create:hover {
     transition: all 125ms;
     background-color: #1414dde0;
+    cursor: pointer;
 }
