@@ -1,7 +1,7 @@
 currentUser = [];
 let id;
 /**
- * 
+ * fetch value of fields
  * 
  */
 function collectTask() {
@@ -29,7 +29,7 @@ function collectTask() {
 }
 
 /**
- * Reset all fields in addTask
+ * Reset all fields
  * 
  * @param {string} title 
  * @param {string} category 
@@ -44,7 +44,11 @@ function clearFields(title, category, description, date, urgency) {
     date.value = '';
     urgency.selectedIndex = 0;
 }
-
+/**
+ * activate or deactivate border an user 
+ * 
+ * @param {string} user 
+ */
 function activeBorder(user) {
     let currentUser = document.getElementById(user);
 
