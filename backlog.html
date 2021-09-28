@@ -16,7 +16,7 @@
     <title>Backlog</title>
 </head>
 
-<body onload="loadNavbarStyle('backlog'); init()">
+<body onload="loadNavbarStyle('backlog'); initBacklog()">
     <div class="navbar">
         <div w3-include-html="./templates/nav.html"></div>
     </div>
@@ -32,7 +32,7 @@
             <span>TITEL</span>
         </div>
         <div class="backlog High">
-            <div class="backlogprofil">
+            <div class="backlogprofil" id="backlogProfil">
                 <img src="img/user-2-64.png" alt="Profilbild">
                 <div class="backloguser">
                     <span class="backlogusername">
