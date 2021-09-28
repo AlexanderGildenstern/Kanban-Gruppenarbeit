@@ -1,20 +1,22 @@
-
+function initBacklog() {
+    init();
+}
 
 /**
  * This function update the backlog
  */
 function updateBacklog() {
-     // document.getElementById('generatedBacklog').innerHTML = ' ';
+    document.getElementById('generatedBacklog').innerHTML = ' ';
     for (let i = 0; i < tasks.length; i++) {
         document.getElementById('generatedBacklog').innerHTML += generateBacklog(i);
 
-        document.getElementById(`userImage${i}`).src = users[i]['profil_image'];
-        document.getElementById(`backlogUser${i}`).innerHTML = users[i]['first_name'] + ' ' + users[i]['last_name'];
-        document.getElementById(`backlogMail${i}`).innerHTML = users[i]['email'];
+        // document.getElementById(`userImage${i}`).src = users[i]['profil_image'];
+        // document.getElementById(`backlogUser${i}`).innerHTML = users[i]['first_name'] + ' ' + users[i]['last_name'];
+        // document.getElementById(`backlogMail${i}`).innerHTML = users[i]['email'];
         document.getElementById(`backlogCategory${i}`).innerHTML = tasks[i]['category'];
         document.getElementById(`backlogDate${i}`).innerHTML = tasks[i]['date'];
         document.getElementById(`backlogTitle${i}`).innerHTML = tasks[i]['title'];
-        
+
     }
 }
 
