@@ -1,4 +1,5 @@
 currentUser = [];
+sendUser = [];
 let id;
 /**
  * fetch value of fields
@@ -11,7 +12,7 @@ function collectTask(event) {
     let description = document.getElementById('description');
     let date = document.getElementById('date');
     let urgency = document.getElementById('urgency');
-    let assignedTo = this.currentUser;
+    let assignedTo = this.sendUser;
     id = Date.now().toString(36) + Math.random().toString(36).substring(2);
 
     let task = {
@@ -50,15 +51,17 @@ function clearFields(title, category, description, date, urgency) {
  * 
  * @param {string} user 
  */
-function activeBorder(user) {
+ function activeBorder(user, i) {
     let currentUser = document.getElementById(user);
 
     if (currentUser.className.indexOf('user-active') === -1) {
         currentUser.classList.add('user-active');
-        this.currentUser.push(user);
+         this.currentUser.push(user);
+         this.sendUser.push(users[i]["first_name"]);
     }
     else {
         currentUser.classList.remove('user-active');
-        this.currentUser.splice(user, 1);
-    }
+         this.currentUser.splice(user, 1);
+         this.sendUser.splice(users[i],1);
+    }   
 }
