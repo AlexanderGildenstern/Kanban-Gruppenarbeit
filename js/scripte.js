@@ -16,7 +16,7 @@ let users = [{
   "last_name": "Zeiler",
   "first_name": "Niklas",
   "email": "zeiler.niklas@yahoo.de",
-  "profil_image": "./img/user_niklas.jpg"
+  "profil_image": "./img/pic6.jpg"
 }];
 let tasks = [];
 
