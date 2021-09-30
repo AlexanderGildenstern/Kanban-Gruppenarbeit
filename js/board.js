@@ -12,11 +12,16 @@ async function loadTasks() {
     if (tasks[i]["phase"] != null) {
       addToBoard(tasks[i]["phase"], tasks[i], i);
     }
+    if (tasks[i]["assignedTo"]["length"] == 1) {
+      document.getElementById(`task-img${i}`).src = tasks[i]["assignedTo"][0]["profil_image"]; 
+    }
     for (let j = 0; j < tasks[i]["assignedTo"]["length"]; j++) {
-      document.getElementById(`task-names${i}`).innerHTML += `<li>` + tasks[i]["assignedTo"][j]["first_name"];
+      document.getElementById(`task-names${i}`).innerHTML += tasks[i]["assignedTo"][j]["first_name"] + `<br>`;
     }
   }
 }
+
+
 
 
 /**
@@ -51,7 +56,7 @@ function addToBoard(phase, task,i) {
           <div class="board-container-body__phase__card__asingto">
             <div class="board-container-body__phase__card__asingto__name" id="task-names${i}"></div>
             <div class="board-container-body__phase__card__asingto__user">
-              <img src="./img/user-2-64.png">
+              <img id="task-img${i}" src="./img/user-2-64.png">
             </div>
           </div>
         </div>

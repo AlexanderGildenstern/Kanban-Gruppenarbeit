@@ -53,7 +53,7 @@
   width: 180px;
   background: #FFF;
   color: gray;
-  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  box-shadow: 0 1px 0 rgba(9, 30, 66, .25);
   border-radius: 3px;
   padding: 10px;
   font-size: 12px;
@@ -79,6 +79,7 @@
   padding-bottom: 4px;
   height: 36px;
 }
+
 .board-container-body__phase__card__footer {
   display: flex;
   flex-direction: column;
@@ -108,7 +109,9 @@
 }
 
 .board-container-body__phase__card__asingto img {
-  width: 20px;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
   margin-left: 12px;
   border-radius: 50%;
 }

@@ -26,10 +26,6 @@ function updateBacklog() {
         document.getElementById(`backlogTitle${i}`).innerHTML = tasks[i]['title'];
     }
 }
-
-
-
-
 /**
  * This function generate a new backlog
  * @param {number} i - This parameter is the number of the task
