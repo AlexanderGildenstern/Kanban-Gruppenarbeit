@@ -50,14 +50,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100px;
   width: 180px;
   background: #FFF;
   color: gray;
   box-shadow: 0 1px 0 rgba(9,30,66,.25);
   border-radius: 3px;
   padding: 10px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .board-container-body__phase__card__top {

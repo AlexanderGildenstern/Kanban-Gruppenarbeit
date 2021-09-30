@@ -10,17 +10,21 @@ async function loadTasks() {
   document.getElementById("done").innerHTML = "";
   for (let i = 0; i < tasks.length; i++) {
     if (tasks[i]["phase"] != null) {
-      addToBoard(tasks[i]["phase"], tasks[i]);
+      addToBoard(tasks[i]["phase"], tasks[i], i);
+    }
+    for (let j = 0; j < tasks[i]["assignedTo"]["length"]; j++) {
+      document.getElementById(`task-names${i}`).innerHTML += `<li>` + tasks[i]["assignedTo"][j]["first_name"];
     }
   }
 }
+
 
 /**
  * render each phase in board
  * @param {string} phase 
  * @param {object} task 
  */
-function addToBoard(phase, task) {
+function addToBoard(phase, task,i) {
   document.getElementById(phase).innerHTML += `
     <div id=${task.id} class="board-container-body__phase__card urgency-${task.urgency.toLowerCase()}" draggable="true" ondragstart="drag(event)">
       <div class="board-container-body__phase__card__top">
@@ -45,7 +49,7 @@ function addToBoard(phase, task) {
             ${task.date}
           </div>
           <div class="board-container-body__phase__card__asingto">
-            <div class="board-container-body__phase__card__asingto__name">${task.assignedTo}</div>
+            <div class="board-container-body__phase__card__asingto__name" id="task-names${i}"></div>
             <div class="board-container-body__phase__card__asingto__user">
               <img src="./img/user-2-64.png">
             </div>
