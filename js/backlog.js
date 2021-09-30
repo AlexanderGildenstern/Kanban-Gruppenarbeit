@@ -11,13 +11,19 @@ function updateBacklog() {
     for (let i = 0; i < tasks.length; i++) {
         document.getElementById('generatedBacklog').innerHTML += generateBacklog(i);
 
-        document.getElementById(`userImage${i}`).src = users[i]['profil_image'];
-        document.getElementById(`backlogUser${i}`).innerHTML = users[i]['first_name'] + ' ' + users[i]['last_name'];
-        document.getElementById(`backlogMail${i}`).innerHTML = users[i]['email'];
+        if (tasks[i]["assignedTo"] == false || tasks[i]["assignedTo"]["length"] > 1) {
+            document.getElementById(`userImage${i}`).src = "img/user-2-64.png"; // unknow user pic
+            document.getElementById(`backlogMail${i}`).innerHTML = '';
+        } else {
+            document.getElementById(`backlogMail${i}`).innerHTML = tasks[i]["assignedTo"][0]["email"];
+            document.getElementById(`userImage${i}`).src = tasks[i]["assignedTo"][0]["profil_image"];
+        }
+        for (let j = 0; j < tasks[i]["assignedTo"]["length"]; j++) {
+            document.getElementById(`backlogUser${i}`).innerHTML += `<li>` + tasks[i]["assignedTo"][j]["first_name"] //+ `<br>`
+        }
         document.getElementById(`backlogCategory${i}`).innerHTML = tasks[i]['category'];
         document.getElementById(`backlogDate${i}`).innerHTML = tasks[i]['date'];
         document.getElementById(`backlogTitle${i}`).innerHTML = tasks[i]['title'];
-
     }
 }
 
@@ -36,9 +42,9 @@ function generateBacklog(i) {
                 <img id="userImage${i}" src="img/user-2-64.png" alt="Profilbild">
                 <div class="backloguser">
                     <span class="backlogusername" id="backlogUser${i}">
-                        Bing Xia
+                        
                     </span>
-                    <a id="backlogMail${i}" class="email" href="mailto:user email">xia.bing@live.com</a>
+                    <a id="backlogMail${i}" class="email" href="mailto:user email"></a>
                 </div>
             </div>
             <span class="backlogcategory" id="backlogCategory${i}">Design</span>

@@ -14,6 +14,7 @@ function collectTask(event) {
     let urgency = document.getElementById('urgency');
     let assignedTo = this.sendUser;
     id = Date.now().toString(36) + Math.random().toString(36).substring(2);
+    
 
     let task = {
         'title': title.value,
@@ -57,7 +58,7 @@ function clearFields(title, category, description, date, urgency) {
     if (currentUser.className.indexOf('user-active') === -1) {
         currentUser.classList.add('user-active');
          this.currentUser.push(user);
-         this.sendUser.push(users[i]["first_name"]);
+         this.sendUser.push(users[i]); //["first_name"]
     }
     else {
         currentUser.classList.remove('user-active');
