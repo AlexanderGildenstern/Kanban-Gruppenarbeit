@@ -38,7 +38,6 @@
 .navbar-box-top__menu__option {
   margin-left: 0px;
   padding-left: 20px;
-
 }
 
 .navbar-box-top__menu__option a {
@@ -69,4 +68,109 @@
 .navbar-box-bottom__user img {
   width: 48px;
   border-radius: 50%;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+
+  body {
+    margin: 0px;
+  }
+
+  .hamburger-menu {
+    display: block;
+    color:#fff;
+    margin-left: 8px;
+    width: 24px;
+  }
+
+  .navbar-box {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 100vw;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #2C26B2;
+    z-index: 99;
+  }
+
+  .navbar-box-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .navbar-box-top__logo {
+    height: 36px;
+    margin-top: 8px;
+    margin-left: 12px;
+  }
+  
+  .navbar-box-top__logo img {
+    margin-left: 12px;
+    width: 24px;
+  }
+  
+  .navbar-box-top__menu {
+    display: none;
+    height: auto;
+    background-color: #afaddd;
+  }
+
+  .navbar-box-top__menu__option {
+    margin-left: 0px;
+    padding-left: 20px;
+    height: 24px;
+  }
+
+  .navbar-box-top__menu__option:hover {
+    background-color: #ececf8;
+  }
+
+  .navbar-box-top__menu__option a {
+    text-align: left;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .option-active {
+    border-left: none;
+  }
+  
+  .option-active a {
+    color: #fff;
+  }
+
+  .navbar-box-bottom {
+    position: fixed;
+    right: 0px;
+    top: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+  }
+
+  .navbar-box-bottom__user {
+    height: auto;
+    justify-self: center;
+  }
+  
+  .navbar-box-bottom__user img {
+    width: 30px;
+    border-radius: 50%;
+  }
+
 }

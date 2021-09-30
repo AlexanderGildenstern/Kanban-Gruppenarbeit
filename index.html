@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/addTask.css">
     <script src="js/mini_backend.js"></script>
     <script src="js/scripte.js"></script>
+    <script src="js/index.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +18,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="init()">
+<body>
 
     <main>
 
@@ -30,9 +31,11 @@
                     if you don´t want to create an account you can continue as guest.
                 </div>
 
-                <form class="btn-container" onsubmit="return false">
-                    <button class="btn-email btn-create">Sign in with email</button>
-                    <button class="btn-guest btn-create">Continue as guest</button>
+                <form name="form" action="" class="input-container" onsubmit="return false">
+                    <input id="email" type="text" placeholder="email"/>
+                    <input id="password" type="password" placeholder="password"/>
+                    <button class="btn-email btn-create" onclick="authenticateUser()">Sign in with email</button>
+                    <button class="btn-guest btn-create" onclick="window.open('/addTask.html');">Continue as guest</button>
                 </form>
             </div>
         </div>

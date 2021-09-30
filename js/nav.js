@@ -12,6 +12,11 @@ function loadNavbarStyle(option) {
  * @param {string} option 
  */
 function activateOption(option) {
+  if (localStorage.getItem("profil_image")) {
+    document.getElementById("profile-image").src = localStorage.getItem("profil_image");
+  } else {
+    document.getElementById("profile-image").src = "./img/user-2-64.png";
+  }
 
   switch(option) {
     case "board":
@@ -65,3 +70,12 @@ function activateOption(option) {
     }
 }
 
+
+function toggleNavbar() {
+  var menu = document.getElementById("navbar-menu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}

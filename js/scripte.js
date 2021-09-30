@@ -2,21 +2,24 @@ let users = [{
   "last_name": "Gildenstern",
   "first_name": "Alexander",
   "email": "A.Gildenstern@gmx.de",
-  "profil_image": "./img/pic2.jpg"
+  "profil_image": "./img/pic2.jpg",
+  "password": "123456"
 },
 
 {
   "last_name": "Xia",
   "first_name": "Bing",
   "email": "xia.bing@live.com",
-  "profil_image": "./img/pic5.jpg"
+  "profil_image": "./img/pic5.jpg",
+  "password": "123456"
 },
 
 {
   "last_name": "Zeiler",
   "first_name": "Niklas",
   "email": "zeiler.niklas@yahoo.de",
-  "profil_image": "./img/pic6.jpg"
+  "profil_image": "./img/pic6.jpg",
+  "password": "123456"
 }];
 let tasks = [];
 

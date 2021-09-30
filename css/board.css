@@ -10,7 +10,7 @@
 .board-container {
   display: flex;
   flex-direction: column;
-  padding-top: 48px;
+  padding-top: 60px;
   padding-left: 36px;
 }
 
