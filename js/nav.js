@@ -18,7 +18,7 @@ function activateOption(option) {
     document.getElementById("profile-image").src = "./img/user-2-64.png";
   }
 
-  switch(option) {
+  switch (option) {
     case "board":
       document.getElementById("opt-board").classList.add("option-active");
       document.getElementById("opt-backlog").classList.remove("option-active");
@@ -58,7 +58,7 @@ function activateOption(option) {
       document.getElementById("opt-help").classList.remove("option-active");
       document.getElementById("opt-imprint").classList.add("option-active");
       document.getElementById("opt-policy").classList.remove("option-active");
-      break;      
+      break;
     case "policy":
       document.getElementById("opt-board").classList.remove("option-active");
       document.getElementById("opt-backlog").classList.remove("option-active");
@@ -66,8 +66,8 @@ function activateOption(option) {
       document.getElementById("opt-help").classList.remove("option-active");
       document.getElementById("opt-imprint").classList.remove("option-active");
       document.getElementById("opt-policy").classList.add("option-active");
-      break;  
-    }
+      break;
+  }
 }
 
 

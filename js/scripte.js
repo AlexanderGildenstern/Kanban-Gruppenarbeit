@@ -1,7 +1,7 @@
 let users = [{
   "last_name": "Gildenstern",
   "first_name": "Alexander",
-  "email": "A.Gildenstern@gmx.de",
+  "email": "a.gildenstern@gmx.de",
   "profil_image": "./img/pic2.jpg",
   "password": "123456"
 },

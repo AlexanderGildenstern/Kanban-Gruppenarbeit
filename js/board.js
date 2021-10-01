@@ -13,7 +13,7 @@ async function loadTasks() {
       addToBoard(tasks[i]["phase"], tasks[i], i);
     }
     if (tasks[i]["assignedTo"]["length"] == 1) {
-      document.getElementById(`task-img${i}`).src = tasks[i]["assignedTo"][0]["profil_image"]; 
+      document.getElementById(`task-img${i}`).src = tasks[i]["assignedTo"][0]["profil_image"];
     }
     for (let j = 0; j < tasks[i]["assignedTo"]["length"]; j++) {
       document.getElementById(`task-names${i}`).innerHTML += tasks[i]["assignedTo"][j]["first_name"] + `<br>`;
@@ -29,7 +29,7 @@ async function loadTasks() {
  * @param {string} phase 
  * @param {object} task 
  */
-function addToBoard(phase, task,i) {
+function addToBoard(phase, task, i) {
   document.getElementById(phase).innerHTML += `
     <div id=${task.id} class="board-container-body__phase__card urgency-${task.urgency.toLowerCase()}" draggable="true" ondragstart="drag(event)">
       <div class="board-container-body__phase__card__top">
@@ -80,17 +80,16 @@ function drag(ev) {
 }
 
 function drop(ev) {
-  if(ev.target.className == "board-container-body__phase")
-    {
-      ev.preventDefault();
-      var data = ev.dataTransfer.getData("text");
-      ev.target.appendChild(document.getElementById(data));
-    }
+  if (ev.target.className == "board-container-body__phase") {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
   updateCard(data, ev.target.id);
 }
 
 function updateCard(cardId, toPhase) {
-  let updatedTasks = tasks.filter( item => item.id == cardId);
+  let updatedTasks = tasks.filter(item => item.id == cardId);
   let updatedTask = updatedTasks[0];
   updatedTask.phase = toPhase;
   updateTask(updatedTask);

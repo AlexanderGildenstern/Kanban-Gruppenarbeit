@@ -1,7 +1,6 @@
-body {
+body{
     margin: 0;
 }
-
 .main-container {
     display: flex;
 }
@@ -169,12 +168,9 @@ body {
 }
 
 @media(max-width:1000px) {
-    /* .input-field{
-        width: 200px;
+    .add-task-container{
+        top: 44px;
     }
-    .title{
-        width: 150px;
-    } */
     .add-task-main {
         display: block;
     }

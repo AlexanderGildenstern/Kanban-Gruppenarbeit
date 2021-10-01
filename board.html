@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Board</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" href="./css/board.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/nav.css">
-    <script src="./js/mini_backend.js"></script>
-    <script src="./js/scripte.js"></script>
-    <script src="./js/task.class.js"></script>
-    <script src="./js/board.js"></script>
-    <script src="./js/nav.js"></script>
-    
-  </head>
-  <body onload="loadNavbarStyle('board'); loadTasks()">
-    <div class="board-page">
-      <div class="nav-container" w3-include-html="./templates/nav.html"></div>
-      <div class="board-container">
-        <div class="board-container-header">
-          <div class="board-container-header__phase"><h2>TO DO</h2></div>
-          <div class="board-container-header__phase"><h2>IN PROGRESS</h2></div>
-          <div class="board-container-header__phase"><h2>TESTING</h2></div>
-          <div class="board-container-header__phase"><h2>DONE</h2></div>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Board</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="./css/board.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/nav.css">
+  <script src="./js/mini_backend.js"></script>
+  <script src="./js/scripte.js"></script>
+  <script src="./js/task.class.js"></script>
+  <script src="./js/board.js"></script>
+  <script src="./js/nav.js"></script>
+
+</head>
+
+<body onload="loadNavbarStyle('board'); loadTasks()">
+  <div class="board-page">
+    <div class="nav-container" w3-include-html="./templates/nav.html"></div>
+    <div class="board-container">
+      <div class="board-container-header">
+        <div class="board-container-header__phase">
+          <h2>TO DO</h2>
         </div>
-        <div class="board-container-body">
-          <div id="todo" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-          <div id="inprogress" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-          <div id="testing" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-          <div id="done" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="board-container-header__phase">
+          <h2>IN PROGRESS</h2>
         </div>
+        <div class="board-container-header__phase">
+          <h2>TESTING</h2>
+        </div>
+        <div class="board-container-header__phase">
+          <h2>DONE</h2>
+        </div>
+      </div>
+      <div class="board-container-body">
+        <div id="todo" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="inprogress" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div>
+        <div id="testing" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="done" class="board-container-body__phase" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
       </div>
     </div>
   </div>
-  
+  </div>
+
 </body>
 
 </html>

@@ -1,9 +1,17 @@
 body {
+    margin: 0;
+}
+
+main {
+    text-align: center;
     display: flex;
+    position: absolute;
+    left: 100px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    padding: 0 40px;
+    z-index: -1;
 }
 
 h2 {
@@ -23,6 +31,11 @@ p {
 
 .navbar {
     position: fixed;
-    left: 6px;
     top: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+    main {
+        left: 0;
+    }
 }
