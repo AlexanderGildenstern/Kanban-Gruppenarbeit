@@ -38,6 +38,7 @@ body{
   grid-gap: 24px;
   height: 75vh;
   overflow: auto;
+  margin-left: 80px;
 }
 
 .board-container-body__phase {
