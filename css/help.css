@@ -29,11 +29,6 @@ p {
     -webkit-user-modify: read-write-plaintext-only;
 }
 
-.navbar {
-    position: fixed;
-    top: 0;
-}
-
 @media only screen and (max-width: 1000px) {
     main {
         left: 0;
