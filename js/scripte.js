@@ -53,7 +53,7 @@ async function init() {
  * smallest_backend_ever, URL-link
  * 
  */
-setURL('http://gruppe-100.developerakademie.com/Kanban-Gruppenarbeit/smallest_backend_ever');
+setURL('http://gruppe-100.developerakademie.com/smallest_backend_ever');
 
 /**
  * for include templates
