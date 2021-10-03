@@ -21,3 +21,9 @@ function authenticateUser() {
 function storeSession(imagePath) {
   localStorage.setItem("profil_image", imagePath);
 }
+
+function initLogin() {
+  if (localStorage.getItem("profil_image") != "") {
+    localStorage.setItem("profil_image", "");
+  }
+}

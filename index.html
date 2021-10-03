@@ -18,7 +18,7 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body onload="initLogin()">
 
     <main>
 
@@ -35,7 +35,7 @@
                     <input id="email" type="text" placeholder="email" />
                     <input id="password" type="password" placeholder="password" />
                     <button class="btn-email btn-create" onclick="authenticateUser()">Sign in with email</button>
-                    <button class="btn-guest btn-create" onclick="window.open('/addTask.html');">Continue as
+                    <button class="btn-guest btn-create" onclick="window.open('/addTask.html','_self');">Continue as
                         guest</button>
                 </form>
             </div>
