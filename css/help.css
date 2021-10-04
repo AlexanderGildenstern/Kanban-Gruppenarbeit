@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    display: flex;
 }
 
 main {
@@ -17,20 +18,27 @@ main {
 h2 {
     text-align: center;
     text-decoration: underline;
-    font-size: 50px;
+}
+p{
+    margin: 50px 0;
 }
 
 img {
     width: 75%;
 }
-
-p {
-    font-size: 25px;
-    -webkit-user-modify: read-write-plaintext-only;
+.navbar{
+    position: fixed;
 }
+
+
 
 @media only screen and (max-width: 1000px) {
     main {
         left: 0;
+        margin-top: 70px;
+    }
+    p {
+        text-align: justify;
+        margin: 30px 0;
     }
 }

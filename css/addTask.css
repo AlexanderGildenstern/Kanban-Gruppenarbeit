@@ -42,6 +42,7 @@ body{
 
 .h1 {
     margin-block-end: 0;
+    font-size: 1.5em;
 }
 
 .h2 {
@@ -170,9 +171,11 @@ body{
 @media(max-width:1000px) {
     .add-task-container{
         top: 44px;
+        
     }
     .add-task-main {
         display: block;
+        padding: 10px 0px;
     }
     .user-icon {
         margin: 10px;

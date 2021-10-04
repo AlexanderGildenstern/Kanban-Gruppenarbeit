@@ -1,12 +1,16 @@
 .main-content-border{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    margin: 5px 40px;
+    width: 100vw;
+    margin-left: 100px;
 }
-
 .imprint-main {
-    margin-left: 80px;
-    margin-top: 50px;
+    margin: 0 40px;
+}
+@media(max-width:1000px){
+    .main-content-border{
+        margin-left: 0px;
+    }
+    .imprint-main {
+        margin: 40px 20px;
+    }
 }
