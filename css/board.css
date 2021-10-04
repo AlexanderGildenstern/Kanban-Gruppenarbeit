@@ -24,6 +24,7 @@ body{
   grid-gap: 24px;
   overflow: auto;
   text-align: center;
+  margin-left: 80px;
 }
 
 .board-container-header h2 {
@@ -156,8 +157,27 @@ body{
   background-color: #f11212;
   color: #FFF;
 }
+<<<<<<< HEAD
 @media(max-width:1000px){
   .board-container-body{
     margin-left: 0px;
   }
+=======
+
+
+@media only screen and (max-width: 1000px) {
+
+  .board-container {
+    padding-left: 12px;
+  }
+
+  .board-container-body {
+    margin-left: 0px;
+  }
+
+  .board-container-header {
+    margin-left: 0px;
+  }
+
+>>>>>>> 3f54c4db8987e944aa343c7b9d68738b24bd48e1
 }
