@@ -156,3 +156,8 @@ body{
   background-color: #f11212;
   color: #FFF;
 }
+@media(max-width:1000px){
+  .board-container-body{
+    margin-left: 0px;
+  }
+}
