@@ -24,6 +24,7 @@ body{
   grid-gap: 24px;
   overflow: auto;
   text-align: center;
+  margin-left: 80px;
 }
 
 .board-container-header h2 {
@@ -155,4 +156,21 @@ body{
 .category-web {
   background-color: #f11212;
   color: #FFF;
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+  .board-container {
+    padding-left: 12px;
+  }
+
+  .board-container-body {
+    margin-left: 0px;
+  }
+
+  .board-container-header {
+    margin-left: 0px;
+  }
+
 }
