@@ -1,6 +1,7 @@
-body{
+body {
     margin: 0;
 }
+
 .backlog-main {
     position: absolute;
     top: 0;
@@ -27,7 +28,7 @@ body{
     color: #1717ce;
     font-size: 18px;
     padding-left: 23px;
-    padding-right: 23px;
+    padding-right: 100px;
 }
 
 .backlog {
@@ -44,7 +45,26 @@ body{
 .backlogprofil {
     display: flex;
     align-items: center;
-    width: 10%;
+    width: 80%;
+}
+
+.backlogcategory {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backlogCreateAt {
+    display: flex;
+    justify-content: center;
+    width: 133%;
+}
+
+.backlogdetails {
+    display: flex;
+    justify-content: center;
+    width: 44%;
 }
 
 .backlogprofil img {
@@ -66,55 +86,45 @@ body{
 }
 
 .High {
-    border-left-style: solid;
-    border-left-color: #f11212;
-    border-left-width: 4px;
+    border-left: 4px solid #f11212;
 }
 
 .Medium {
-    border-left-style: solid;
-    border-left-color: #fcee29;
-    border-left-width: 4px;
+    border-left: 4px solid #fcee29;
 }
 
 .Low {
-    border-left-style: solid;
-    border-left-color: #33af44;
-    border-left-width: 4px;
+    border-left: 4px solid #33af44;
 }
 
-
-@media (max-width: 1000px){
+@media (max-width: 1000px) {
     .backlog-main {
         top: 40px;
         left: 0;
     }
-
     .list-header {
         display: none;
     }
-
     .backlog {
         flex-direction: column;
         align-items: flex-start;
     }
-
     #userImage {
         display: none;
     }
-
     .email {
         display: none;
     }
-
     .backlogprofil {
         margin-bottom: 16px;
+        width: 0;
     }
-
-    .backlogcategory, .backlogCreateAt {
+    .backlogcategory, .backlogCreateAt, .backlogdetails {
         margin-bottom: 8px;
+        width: 10%;
+        display: block;        
     }
-    .header{
+    .header {
         padding-left: 20px;
     }
 }
