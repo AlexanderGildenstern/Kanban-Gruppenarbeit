@@ -6,6 +6,17 @@ async function initBacklog() {
 /**
  * This function update the backlog
  */
+// function updateBacklog() {
+//     let backlogsContainer = document.getElementById("generatedBacklog");
+//     backlogsContainer.innerHTML = "";
+//     tasks.forEach(task => {
+//         task.assignedTo.forEach(user => {
+//             backlogsContainer.innerHTML += generateBacklog(task, user)
+//         });
+//     });
+
+// }
+
 function updateBacklog() {
     document.getElementById('generatedBacklog').innerHTML = ' ';
     for (let i = 0; i < tasks.length; i++) {
