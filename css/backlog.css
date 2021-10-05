@@ -97,6 +97,21 @@ body {
     border-left: 4px solid #33af44;
 }
 
+@media (max-width: 1120px) {
+    .backlogprofil {
+        width: 67%;
+    }
+
+    .backlogcategory {
+        width: 40%;
+    }
+
+    .backlogCreateAt {
+        width: 70%;
+    }
+    
+}
+
 @media (max-width: 1000px) {
     .backlog-main {
         top: 40px;
