@@ -19,7 +19,7 @@ function collectTask(event) {
         'title': title.value,
         'category': category.value,
         'description': description.value,
-        'date': date.value,
+        'date': date.value.replaceAll("-", "."),
         'createAt': new Date().getTime(),
         'urgency': urgency.value,
         'assignedTo': assignedTo,
@@ -27,7 +27,9 @@ function collectTask(event) {
         'phase': 'todo',
     }
     addTask(task);
+    console.log("date: " + date.value.replace("-", "."));
     clearFields(title, category, description, date, urgency);
+
 }
 
 /**
