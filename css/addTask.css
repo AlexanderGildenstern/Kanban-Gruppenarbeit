@@ -1,6 +1,7 @@
-body{
+body {
     margin: 0;
 }
+
 .main-container {
     display: flex;
 }
@@ -168,10 +169,39 @@ body{
     cursor: pointer;
 }
 
-@media(max-width:1000px) {
-    .add-task-container{
+@media(max-width:770px) {
+    .add-task-left {
+        width: auto;
+        margin-right: 20px;
+    }
+    .add-task-right {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .user-icon{
+        width: 60px;
+        height: 60px;
+        margin: 10px;
+    }
+}
+
+@media(max-width:690px) {
+    .add-task-container {
         top: 44px;
-        
+    }
+    .input-field {
+        width: 250px;
+    }
+    .input-field-dropbox {
+        width: 263px;
+    }
+    .input-field-commitment {
+        width: 239px;
+    }
+    .calendly {
+        width: 239px!important;
     }
     .add-task-main {
         display: block;
@@ -179,6 +209,8 @@ body{
     }
     .user-icon {
         margin: 10px;
+        height: 50px;
+        width: 50px;
     }
     .user-icon:hover {
         margin: 10px;
@@ -187,14 +219,17 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100vw;
     }
     .add-task-right {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+    .btn-task {
+        margin: 20px 0;
+    }
     ::-webkit-calendar-picker-indicator {
-        
         height: 16px;
         width: 16px;
     }
