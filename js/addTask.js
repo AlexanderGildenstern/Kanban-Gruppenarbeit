@@ -1,6 +1,7 @@
 currentUser = [];
 sendUser = [];
 let id;
+
 /**
  * fetch value of fields
  * 
@@ -14,7 +15,6 @@ function collectTask(event) {
     let urgency = document.getElementById('urgency');
     let assignedTo = this.sendUser;
     id = Date.now().toString(36) + Math.random().toString(36).substring(2);
-
     let task = {
         'title': title.value,
         'category': category.value,
@@ -27,9 +27,7 @@ function collectTask(event) {
         'phase': 'todo',
     }
     addTask(task);
-    console.log("date: " + date.value.replace("-", "."));
     clearFields(title, category, description, date, urgency);
-
 }
 
 /**
@@ -49,6 +47,7 @@ function clearFields(title, category, description, date, urgency) {
     urgency.selectedIndex = 0;
     deactiveBorder();
 }
+
 /**
  * activate or deactivate border an user 
  * 
@@ -68,6 +67,7 @@ function activeBorder(user, i) {
         this.sendUser.splice(users[i], 1);
     }
 }
+
 /**
  * deactive border by click on cancel button
  * 
