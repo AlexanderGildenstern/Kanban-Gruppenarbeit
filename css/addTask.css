@@ -247,3 +247,9 @@ body {
         width: 16px;
     }
 }
+
+@media (orientation: landscape) {
+    .add-task-container {
+        margin-top: 35px;
+    }
+}
