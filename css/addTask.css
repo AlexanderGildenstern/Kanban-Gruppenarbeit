@@ -69,6 +69,7 @@ body {
     padding: 10px;
     resize: none;
     width: 289px;
+    height: 165px;
 }
 
 .input-field-dropbox {
@@ -170,6 +171,9 @@ body {
 }
 
 @media(max-width:770px) {
+    .input-field-commitment {
+        height: 125px;
+    }
     .add-task-left {
         width: auto;
         margin-right: 20px;
@@ -180,10 +184,15 @@ body {
         flex-direction: column;
         align-items: flex-end;
     }
-    .user-icon{
+    .user-icon {
         width: 60px;
         height: 60px;
         margin: 10px;
+    }
+    .user-icon:hover {
+        margin: 10px;
+        height: 60px;
+        width: 60px;
     }
 }
 
@@ -192,20 +201,21 @@ body {
         top: 44px;
     }
     .input-field {
-        width: 250px;
+        width: inherit;
     }
     .input-field-dropbox {
-        width: 263px;
+        width: inherit;
     }
     .input-field-commitment {
-        width: 239px;
+        width: inherit;
+        height:85px ;
     }
     .calendly {
         width: 239px!important;
     }
     .add-task-main {
         display: block;
-        padding: 10px 0px;
+        margin: 10px 0px;
     }
     .user-icon {
         margin: 10px;
@@ -214,17 +224,20 @@ body {
     }
     .user-icon:hover {
         margin: 10px;
+        height: 50px;
+        width: 50px;
     }
     .add-task-left {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        width: 100vw;
+        align-items: inherit;
+        width: inherit;
+        margin-right: 0;
     }
     .add-task-right {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: inherit;
     }
     .btn-task {
         margin: 20px 0;
