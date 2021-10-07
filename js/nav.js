@@ -1,3 +1,10 @@
+const optionIds = ["opt-board", 
+                  "opt-backlog", 
+                  "opt-addtask", 
+                  "opt-help", 
+                  "opt-imprint",
+                  "opt-policy"];
+
 /**
  * 
  * @param {string} option
@@ -18,55 +25,14 @@ function activateOption(option) {
     document.getElementById("profile-image").src = "./img/user-2-64.png";
   }
 
-  switch (option) {
-    case "board":
-      document.getElementById("opt-board").classList.add("option-active");
-      document.getElementById("opt-backlog").classList.remove("option-active");
-      document.getElementById("opt-addtask").classList.remove("option-active");
-      document.getElementById("opt-help").classList.remove("option-active");
-      document.getElementById("opt-imprint").classList.remove("option-active");
-      document.getElementById("opt-policy").classList.remove("option-active");
-      break;
-    case "backlog":
-      document.getElementById("opt-board").classList.remove("option-active");
-      document.getElementById("opt-backlog").classList.add("option-active");
-      document.getElementById("opt-addtask").classList.remove("option-active");
-      document.getElementById("opt-help").classList.remove("option-active");
-      document.getElementById("opt-imprint").classList.remove("option-active");
-      document.getElementById("opt-policy").classList.remove("option-active");
-      break;
-    case "addtask":
-      document.getElementById("opt-board").classList.remove("option-active");
-      document.getElementById("opt-backlog").classList.remove("option-active");
-      document.getElementById("opt-addtask").classList.add("option-active");
-      document.getElementById("opt-help").classList.remove("option-active");
-      document.getElementById("opt-imprint").classList.remove("option-active");
-      document.getElementById("opt-policy").classList.remove("option-active");
-      break;
-    case "help":
-      document.getElementById("opt-board").classList.remove("option-active");
-      document.getElementById("opt-backlog").classList.remove("option-active");
-      document.getElementById("opt-addtask").classList.remove("option-active");
-      document.getElementById("opt-help").classList.add("option-active");
-      document.getElementById("opt-imprint").classList.remove("option-active");
-      document.getElementById("opt-policy").classList.remove("option-active");
-      break;
-    case "imprint":
-      document.getElementById("opt-board").classList.remove("option-active");
-      document.getElementById("opt-backlog").classList.remove("option-active");
-      document.getElementById("opt-addtask").classList.remove("option-active");
-      document.getElementById("opt-help").classList.remove("option-active");
-      document.getElementById("opt-imprint").classList.add("option-active");
-      document.getElementById("opt-policy").classList.remove("option-active");
-      break;
-    case "policy":
-      document.getElementById("opt-board").classList.remove("option-active");
-      document.getElementById("opt-backlog").classList.remove("option-active");
-      document.getElementById("opt-addtask").classList.remove("option-active");
-      document.getElementById("opt-help").classList.remove("option-active");
-      document.getElementById("opt-imprint").classList.remove("option-active");
-      document.getElementById("opt-policy").classList.add("option-active");
-      break;
+  for (let i = 0; i < optionIds.length; i++) {
+    if (option == optionIds[i].substring(4)) {
+      console.log(option);
+      document.getElementById(optionIds[i]).classList.add("option-active");
+    } else {
+      document.getElementById(optionIds[i]).classList.remove("option-active");
+    }
+
   }
 }
 
