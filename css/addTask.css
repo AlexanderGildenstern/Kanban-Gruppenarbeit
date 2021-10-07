@@ -217,6 +217,9 @@ body {
         display: block;
         margin: 10px 0px;
     }
+    .user-icon-container{
+        justify-content: space-between;
+    }
     .user-icon {
         margin: 10px;
         height: 50px;
