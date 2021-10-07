@@ -245,10 +245,7 @@ body {
     .btn-task {
         margin: 20px 0;
     }
-    ::-webkit-calendar-picker-indicator {
-        height: 16px;
-        width: 16px;
-    }
+    
 }
 
 @media (orientation: landscape) {
