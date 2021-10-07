@@ -15,7 +15,7 @@ function collectTask(event) {
     let urgency = document.getElementById('urgency');
     let assignedTo = this.sendUser;
     id = Date.now().toString(36) + Math.random().toString(36).substring(2);
-    alert(title.value + ' task has been added');
+    alert(title.value + ' task has been added to board');
 
     let task = {
         'title': title.value,
