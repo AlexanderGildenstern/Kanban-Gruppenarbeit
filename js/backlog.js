@@ -10,11 +10,11 @@ function updateBacklog() {
     let backlogsContainer = document.getElementById("generatedBacklog");
     backlogsContainer.innerHTML = "";
     tasks.forEach(task => {
-        task.assignedTo.forEach(user => {
+        task.assignedTo.forEach(userId => {
+            let user = users.find(user => user.id === userId)
             backlogsContainer.innerHTML += generateBacklog(task, user)
         });
     });
-
 }
 
 /**
@@ -24,19 +24,25 @@ function updateBacklog() {
  */
 function generateBacklog(task, user) {
     return `
-        <div class="backlog ${task.urgency}">
+        <div class="backlog ${tasks.urgency}">
             <div class="backlogprofil" id="backlogProfil">
-                <img id="profilImage" src="${user.profil_image}" alt="Profilbild">
+                <img id="userImage" src="${user.profil_image}" alt="Profilbild">
                 <div class="backloguser">
-                    <span class="backlogusername" id="UserNameBacklog">
-                    ${user.first_name}
+                    <span class="backlogusername" id="backlogUser">
+                        ${user.first_name}
                     </span>
-                    <a id="email" class="email" href="mailto:${user.email}">${user.email}</a>
+                    <a id="backlogMail" class="email" href="mailto:${user.email}">${user.email}</a>
                 </div>
             </div>
-            <span class="backlogcategory" id="BacklogCategory">${task.category}</span>
-            <span class="backlogCreateAt" id="BacklogDate">${task.date}</span>
-            <span class="backlogdetails" id="BacklogTitle">${task.title}</span>
+            <div class="backlogcategory">
+                <span id="backlogCategory">${task.category}</span>
+            </div>
+            <div class="backlogCreateAt">
+                <span id="backlogDate">${task.date}</span>
+            </div>
+            <div class="backlogdetails">
+                <span id="backlogTitle">${task.title}</span>
+            </div>
         </div>
     `;
 }
