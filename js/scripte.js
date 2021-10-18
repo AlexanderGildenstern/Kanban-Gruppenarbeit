@@ -3,7 +3,8 @@ let users = [{
   "first_name": "Alexander",
   "email": "a.gildenstern@gmx.de",
   "profil_image": "./img/pic2.jpg",
-  "password": "123456"
+  "password": "123456",
+  "id": new Date().getTime()
 },
 
 {
@@ -11,7 +12,8 @@ let users = [{
   "first_name": "Bing",
   "email": "xia.bing@live.com",
   "profil_image": "./img/pic5.jpg",
-  "password": "123456"
+  "password": "123456",
+  "id": new Date().getTime() + 1
 },
 
 {
@@ -19,8 +21,10 @@ let users = [{
   "first_name": "Niklas",
   "email": "zeiler.niklas@yahoo.de",
   "profil_image": "./img/pic6.jpg",
-  "password": "123456"
+  "password": "123456",
+  "id": new Date().getTime() + 2
 }];
+// let logInUsers;
 let tasks = [];
 
 const category = {
@@ -45,8 +49,9 @@ const phase = {
 };
 
 async function init() {
-  await downloadFromServer(); // for backend
-  tasks = JSON.parse(backend.getItem('tasks')) || []; // for backend
+  await loadFromBackend();
+  // await downloadFromServer(); // for backend
+  // tasks = JSON.parse(backend.getItem('tasks')) || []; // for backend
   includeHTML();
 }
 /**
@@ -98,6 +103,19 @@ async function addTask(newTask) {
   await backend.setItem('tasks', JSON.stringify(tasks));
 }
 
+
+async function saveUser() {
+  await backend.setItem('users', JSON.stringify(users));
+}
+
+
+async function loadFromBackend() {
+  await downloadFromServer();
+  users = JSON.parse(backend.getItem('users')) || [];
+  tasks = JSON.parse(backend.getItem('tasks')) || [];
+  console.log(tasks);
+}
+
 /**
 * get tasks array from server
 *  
@@ -143,3 +161,6 @@ async function deleteTask(taskId) {
 function clearTasks() {
   backend.deleteItem('tasks');
 }
+
+
+

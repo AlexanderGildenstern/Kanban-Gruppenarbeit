@@ -1,11 +1,9 @@
 async function initLogin() {
   await init();
   await saveUser();
+  checkProfilImage();
 }
-//   if (localStorage.getItem("profil_image") != "") {
-//     localStorage.setItem("profil_image", "");
-//   }
-// }
+
 
 
 /**
@@ -14,7 +12,7 @@ async function initLogin() {
 function authenticateUser() {
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
-  let loginUser = users.find(user => user.email == email);
+  let loginUser = users.find(user => user.email === email);
   if (loginUser && loginUser.password == password) {
     storeSession(loginUser.profil_image);
     document.form.action = "addTask.html";
@@ -47,9 +45,9 @@ function checkvalidForm() {
   let email = document.getElementById('registerEmail').value;
 
   return firstName.length > 0 &&
-         lastName.length > 0 &&
-         password.length > 0 &&
-         email.length > 0;
+    lastName.length > 0 &&
+    password.length > 0 &&
+    email.length > 0;
 }
 
 /**
@@ -59,9 +57,10 @@ function checkvalidForm() {
 function createNewUser() {
   return {
     last_name: document.getElementById('lastName').value,
-    first_name: document.getElementById('firstName').value, 
-    email: document.getElementById('registerEmail').value,   
-    password: document.getElementById('password-field').value,    
+    first_name: document.getElementById('firstName').value,
+    email: document.getElementById('registerEmail').value,
+    password: document.getElementById('password-field').value,
+    profil_image: "./img/user-2-64.png",
     id: new Date().getTime()
   }
 }
@@ -73,10 +72,10 @@ async function register() {
   if (checkvalidForm()) {
     users.push(createNewUser());
     await saveUser();
-    window.open('./addTask.html','_self');    
+    window.open('./addTask.html', '_self');
   } else {
     alert('Please fill out the input fields!');
-  }  
+  }
 }
 
 
@@ -95,5 +94,12 @@ function showPassword() {
 //  */
 function storeSession(imagePath) {
   localStorage.setItem("profil_image", imagePath);
+}
+
+
+function checkProfilImage() {
+  if (localStorage.getItem("profil_image") != "") {
+    localStorage.setItem("profil_image", "");
+  }
 }
 

@@ -23,7 +23,7 @@
     <main>
 
         <div class="login-container">
-            <div class="login-main">
+            <div class="login-main" id="loginMain">
                 <h1>Login to Kanban-Board</h1>
                 <div class="login-text">
                     Please sign in with your email and password.<br>
@@ -31,12 +31,31 @@
                     if you don´t want to create an account you can continue as guest.
                 </div>
 
-                <form name="form" action="" class="input-container" onsubmit="return false">
+                <form name="form" action="" class="input-container" onsubmit="return false;">
                     <input id="email" type="text" placeholder="email" />
                     <input id="password" type="password" placeholder="password" />
                     <button class="btn-email btn-create" onclick="authenticateUser()">Sign in with email</button>
+                    <button class="btn-register-with btn-create" onclick="registerwithMail()">Register with
+                        email</button>
                     <button class="btn-guest btn-create" onclick="window.open('/addTask.html','_self');">Continue as
                         guest</button>
+                </form>
+            </div>
+            <div id="registerMain" class="register-main d-none">
+                <h1>Register</h1>
+                <span class="register-text">
+                    Please enter your first name, last name and your email adress to register at our kanbanboard.
+                </span>
+                <form name="form" action="" class="register-container" onsubmit="return false;">
+                    <input onfocus="this.value= ''" type="text" id="firstName" placeholder="First Name" />
+                    <input onfocus="this.value= ''" type="text" id="lastName" placeholder="Last Name" />
+                    <input onfocus="this.value= ''" type="text" id="registerEmail" placeholder="E-Mail" />
+                    <div class="input-password">
+                        <input type="password" id="password-field" placeholder="Password" />
+                        <img class="eye" onclick="showPassword()" src="./img/eye-outline.png">
+                    </div>
+                    <button class="btn-create btn-register" onclick="register()">Register</button>
+                    <button class="btn-create btn-backToLogin" onclick="backToLogin()">Back to Login</button>
                 </form>
             </div>
         </div>
