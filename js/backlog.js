@@ -12,26 +12,22 @@ function updateBacklog() {
     tasks.forEach(task => {
         task.assignedTo.forEach(userId => {
             let user = users.find(user => user.id === userId)
-            backlogsContainer.innerHTML += generateBacklog(task, user)
+            backlogsContainer.innerHTML += generateBacklog(task, userId)
         });
     });
 }
 
-/**
- * This function generate a new backlog
- * @param {number} i - This parameter is the number of the task
- * @returns the HTML text to generate a new backlog
- */
-function generateBacklog(task, user) {
+
+function generateBacklog(task, users) {
     return `
-        <div class="backlog ${tasks.urgency}">
+        <div class="backlog ${task.urgency}">
             <div class="backlogprofil" id="backlogProfil">
-                <img id="userImage" src="${user.profil_image}" alt="Profilbild">
+                <img id="userImage" src="${users.profil_image}" alt="Profilbild">
                 <div class="backloguser">
                     <span class="backlogusername" id="backlogUser">
-                        ${user.first_name}
+                        ${users.first_name}
                     </span>
-                    <a id="backlogMail" class="email" href="mailto:${user.email}">${user.email}</a>
+                    <a id="backlogMail" class="email" href="mailto:${users.email}">${users.email}</a>
                 </div>
             </div>
             <div class="backlogcategory">

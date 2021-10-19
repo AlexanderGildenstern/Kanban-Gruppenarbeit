@@ -1,3 +1,5 @@
+loginUser = {};
+
 async function initLogin() {
   await init();
   await saveUser();
@@ -9,14 +11,14 @@ async function initLogin() {
 /**
  * authenticate user
  */
-function authenticateUser() {
+async function authenticateUser() {
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
-  let loginUser = users.find(user => user.email === email);
+  loginUser = users.find(user => user.email === email);
   if (loginUser && loginUser.password == password) {
     storeSession(loginUser.profil_image);
-    document.form.action = "addTask.html";
-    document.form.submit();
+    await saveUser();
+    window.open('/addTask.html','_self');
   } else {
     alert("Email or password is incorrect");
   }

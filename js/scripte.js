@@ -13,7 +13,7 @@ let users = [{
   "email": "xia.bing@live.com",
   "profil_image": "./img/pic5.jpg",
   "password": "123456",
-  "id": new Date().getTime() + 1
+  "id": new Date().getTime()
 },
 
 {
@@ -22,9 +22,8 @@ let users = [{
   "email": "zeiler.niklas@yahoo.de",
   "profil_image": "./img/pic6.jpg",
   "password": "123456",
-  "id": new Date().getTime() + 2
+  "id": new Date().getTime()
 }];
-// let logInUsers;
 let tasks = [];
 
 const category = {
@@ -161,6 +160,10 @@ async function deleteTask(taskId) {
 function clearTasks() {
   backend.deleteItem('tasks');
 }
+
+// function clearUsers() {
+//   backend.deleteItem('users');
+// }
 
 
 
