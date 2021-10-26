@@ -14,10 +14,75 @@ function authenticateUser() {
   }
 }
 
+
+function registerwithMail() {
+  document.getElementById('registerMain').classList.remove('d-none');
+  document.getElementById('loginMain').classList.add('d-none');
+}
+
+
+function backToLogin() {
+  document.getElementById('registerMain').classList.add('d-none');
+  document.getElementById('loginMain').classList.remove('d-none');
+}
+
 /**
- * store user information in local
- * @param {string} email 
+ * Check if values in the variable
+ * @returns true or false 
  */
+function checkvalidForm() {
+  let firstName = document.getElementById('firstName').value;
+  let lastName = document.getElementById('lastName').value;
+  let password = document.getElementById('password-field').value;
+  let email = document.getElementById('registerEmail').value;
+
+  return firstName.length > 0 &&
+         lastName.length > 0 &&
+         password.length > 0 &&
+         email.length > 0;
+}
+
+/**
+ * Create a new object 
+ * @returns an object with values 
+ */
+function createNewUser() {
+  return {
+    first_name: document.getElementById('firstName').value,
+    last_name: document.getElementById('lastName').value,
+    password: document.getElementById('password-field').value,
+    email: document.getElementById('registerEmail').value,
+    id: new Date().getTime()
+  }
+}
+
+/**
+ * Register a new user or issues a alert to fill in the fields
+ */
+function register() {
+  if (checkvalidForm()) {
+    users.push(createNewUser());
+    window.open('./addTask.html','_self');    
+  } else {
+    alert('Please fill out the input fields!');
+  }
+}
+
+
+function showPassword() {
+  let x = document.getElementById('password-field');
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+
+// /**
+//  * store user information in local
+//  * @param {string} email 
+//  */
 function storeSession(imagePath) {
   localStorage.setItem("profil_image", imagePath);
 }
