@@ -136,7 +136,6 @@ body {
     }
     .backlogcategory, .backlogCreateAt, .backlogdetails {
         margin-bottom: 8px;
-        width: 30%;
         display: block;        
     }
     .header {

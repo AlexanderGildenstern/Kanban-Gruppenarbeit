@@ -1,14 +1,24 @@
+loginUser = {};
+
+async function initLogin() {
+  await init();
+  await saveUser();
+  checkProfilImage();
+}
+
+
+
 /**
  * authenticate user
  */
-function authenticateUser() {
+async function authenticateUser() {
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
-  let loginUser = users.find(user => user.email == email);
+  loginUser = users.find(user => user.email === email);
   if (loginUser && loginUser.password == password) {
     storeSession(loginUser.profil_image);
-    document.form.action = "addTask.html";
-    document.form.submit();
+    await saveUser();
+    window.open('/addTask.html','_self');
   } else {
     alert("Email or password is incorrect");
   }
@@ -37,6 +47,7 @@ function checkvalidForm() {
   let email = document.getElementById('registerEmail').value;
 
   return firstName.length > 0 &&
+<<<<<<< HEAD
          lastName.length > 0 &&
          password.length > 0 &&
          email.length > 0;
@@ -63,6 +74,36 @@ function register() {
   if (checkvalidForm()) {
     users.push(createNewUser());
     window.open('./addTask.html','_self');    
+=======
+    lastName.length > 0 &&
+    password.length > 0 &&
+    email.length > 0;
+}
+
+/**
+ * Create a new object 
+ * @returns an object with values 
+ */
+function createNewUser() {
+  return {
+    last_name: document.getElementById('lastName').value,
+    first_name: document.getElementById('firstName').value,
+    email: document.getElementById('registerEmail').value,
+    password: document.getElementById('password-field').value,
+    profil_image: "./img/user-2-64.png",
+    id: new Date().getTime()
+  }
+}
+
+/**
+ * Register a new user or issues a alert to fill in the fields
+ */
+async function register() {
+  if (checkvalidForm()) {
+    users.push(createNewUser());
+    await saveUser();
+    window.open('./addTask.html', '_self');
+>>>>>>> 12d29c26cb066c8db20a0b4e9557b4cd4c6693bc
   } else {
     alert('Please fill out the input fields!');
   }
@@ -78,7 +119,10 @@ function showPassword() {
   }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 12d29c26cb066c8db20a0b4e9557b4cd4c6693bc
 // /**
 //  * store user information in local
 //  * @param {string} email 
@@ -87,8 +131,10 @@ function storeSession(imagePath) {
   localStorage.setItem("profil_image", imagePath);
 }
 
-function initLogin() {
+
+function checkProfilImage() {
   if (localStorage.getItem("profil_image") != "") {
     localStorage.setItem("profil_image", "");
   }
 }
+
