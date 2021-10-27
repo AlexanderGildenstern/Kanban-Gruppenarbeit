@@ -47,7 +47,6 @@ function checkvalidForm() {
   let email = document.getElementById('registerEmail').value;
 
   return firstName.length > 0 &&
-<<<<<<< HEAD
          lastName.length > 0 &&
          password.length > 0 &&
          email.length > 0;
@@ -73,37 +72,8 @@ function createNewUser() {
 function register() {
   if (checkvalidForm()) {
     users.push(createNewUser());
+    saveUser();
     window.open('./addTask.html','_self');    
-=======
-    lastName.length > 0 &&
-    password.length > 0 &&
-    email.length > 0;
-}
-
-/**
- * Create a new object 
- * @returns an object with values 
- */
-function createNewUser() {
-  return {
-    last_name: document.getElementById('lastName').value,
-    first_name: document.getElementById('firstName').value,
-    email: document.getElementById('registerEmail').value,
-    password: document.getElementById('password-field').value,
-    profil_image: "./img/user-2-64.png",
-    id: new Date().getTime()
-  }
-}
-
-/**
- * Register a new user or issues a alert to fill in the fields
- */
-async function register() {
-  if (checkvalidForm()) {
-    users.push(createNewUser());
-    await saveUser();
-    window.open('./addTask.html', '_self');
->>>>>>> 12d29c26cb066c8db20a0b4e9557b4cd4c6693bc
   } else {
     alert('Please fill out the input fields!');
   }
@@ -119,10 +89,6 @@ function showPassword() {
   }
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 12d29c26cb066c8db20a0b4e9557b4cd4c6693bc
 // /**
 //  * store user information in local
 //  * @param {string} email 
