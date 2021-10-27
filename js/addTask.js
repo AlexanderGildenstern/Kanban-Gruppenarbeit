@@ -13,7 +13,7 @@ function collectTask(event) {
     let description = document.getElementById('description');
     let date = document.getElementById('date');
     let urgency = document.getElementById('urgency');
-    let sendUser = this.sendUser;
+    let sendUser = this.currentUser;    
     id = Date.now().toString(36) + Math.random().toString(36).substring(2);
     alert(title.value + ' task has been added to board');
 
